@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitAgric - Marketing & Produce Sales</title>
+    <meta name="description" content="Sell your farm produce and reach customers locally and globally.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.bitfarms.com/marketing-sales">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <h1>BitAgric</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="agricultural-encyclopedia.html">Encyclopedia</a></li>
+                <li><a href="budget-planning.html">Budgeting</a></li>
+                <li><a href="marketing-sales.html">Marketing</a></li>
+                <li><a href="farm-analytics.html">Analytics</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about-us.html">About</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Intro Section -->
+    <section id="intro">
+        <h2>Farm Produce Marketing & Sales</h2>
+        <p>Sell your farm produce and reach customers locally and globally.</p>
+    </section>
+
+    <!-- Product Listings Grid -->
+    <section id="product-listings">
+        <h3>Available Produce</h3>
+        <div class="listings-grid">
+            <article class="product">
+                <img src="placeholder.jpg" alt="Fresh bananas from Kiambu" width="200" height="150">
+                <h4>Bananas</h4>
+                <p>KSh 50 per bunch</p>
+                <p class="availability">In Season</p>
+                <p class="region">Kiambu, Kenya</p>
+                <button>View Details</button>
+            </article>
+
+            <article class="product">
+                <img src="placeholder.jpg" alt="Ripe tomatoes from Nairobi" width="200" height="150">
+                <h4>Tomatoes</h4>
+                <p>KSh 80 per kg</p>
+                <p class="availability">Available</p>
+                <p class="region">Nairobi</p>
+                <button>View Details</button>
+            </article>
+
+            <article class="product">
+                <img src="placeholder.jpg" alt="Fresh avocados from Murang'a" width="200" height="150">
+                <h4>Avocados</h4>
+                <p>KSh 70 each</p>
+                <p class="availability">Limited</p>
+                <p class="region">Murang'a, Kenya</p>
+                <button>View Details</button>
+            </article>
+
+            <article class="product">
+                <img src="placeholder.jpg" alt="Red onions from Eldoret" width="200" height="150">
+                <h4>Onions</h4>
+                <p>KSh 120 per kg</p>
+                <p class="availability">In Season</p>
+                <p class="region">Eldoret</p>
+                <button>View Details</button>
+            </article>
+
+            <article class="product">
+                <img src="placeholder.jpg" alt="Fresh strawberries from Nyeri" width="200" height="150">
+                <h4>Strawberries</h4>
+                <p>KSh 200 per punnet</p>
+                <p class="availability">Available</p>
+                <p class="region">Nyeri, Kenya</p>
+                <button>View Details</button>
+            </article>
+
+            <article class="product">
+                <img src="placeholder.jpg" alt="Quality maize from Nakuru" width="200" height="150">
+                <h4>Maize</h4>
+                <p>KSh 3000 per bag</p>
+                <p class="availability">In Season</p>
+                <p class="region">Nakuru</p>
+                <button>View Details</button>
+            </article>
+        </div>
+    </section>
+
+    <!-- Post New Product Form -->
+    <section id="post-product">
+        <h3>List Your Produce</h3>
+        <form>
+            <div class="form-group">
+                <label for="product-name">Product Name</label>
+                <input type="text" id="product-name" name="product-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="fruit">Fruit</option>
+                    <option value="vegetable">Vegetable</option>
+                    <option value="herb">Herb</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price per unit (KSh)</label>
+                <input type="number" id="price" name="price" min="0" step="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity Available</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="region">Region/Location</label>
+                <input type="text" id="region" name="region" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+
+            <button type="submit">Post Listing</button>
+        </form>
+    </section>
+
+    <!-- Buyer Interest Section -->
+    <section id="buyer-interest">
+        <h3>Interested in Our Produce?</h3>
+        <form>
+            <div class="form-group">
+                <label for="buyer-name">Your Name</label>
+                <input type="text" id="buyer-name" name="buyer-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="buyer-email">Email</label>
+                <input type="email" id="buyer-email" name="buyer-email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="buyer-phone">Phone</label>
+                <input type="tel" id="buyer-phone" name="buyer-phone">
+            </div>
+
+            <div class="form-group">
+                <label for="product-interest">Product Interested In</label>
+                <input type="text" id="product-interest" name="product-interest" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <button type="submit">Send Enquiry</button>
+        </form>
+    </section>
+
+    <!-- Marketing Tips Section -->
+    <section id="marketing-tips">
+        <h3>Marketing Tips for Farmers</h3>
+        
+        <article class="tip">
+            <h4>Use Social Media</h4>
+            <p>Create profiles on popular social media platforms to showcase your products. Regular posts with good photos can attract more customers.</p>
+        </article>
+
+        <article class="tip">
+            <h4>Package Attractively</h4>
+            <p>Invest in good packaging that protects your produce while making it visually appealing to potential buyers.</p>
+        </article>
+
+        <article class="tip">
+            <h4>Highlight Your Unique Selling Points</h4>
+            <p>Emphasize what makes your produce special - organic methods, special varieties, or superior quality can justify premium pricing.</p>
+        </article>
+
+        <article class="tip">
+            <h4>Build Relationships with Buyers</h4>
+            <p>Maintain good communication with customers and consider loyalty programs to encourage repeat business.</p>
+        </article>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="newsletter">
+            <h4>Subscribe to Our Newsletter</h4>
+            <form>
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <p>Email: info@bitagric.com</p>
+            <p>Phone: +254 700 123456</p>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2023 BitAgric. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

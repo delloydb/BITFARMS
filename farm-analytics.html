@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitAgric - Analytics Dashboard</title>
+    <meta name="description" content="Track your crop performance, expenses, and profitability with BitAgric's analytics tools.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.bitfarms.com/farm-analytics">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav>
+            <h1>BitAgric</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="agricultural-encyclopedia.html">Encyclopedia</a></li>
+                <li><a href="budget-planning.html">Budgeting</a></li>
+                <li><a href="marketing-sales.html">Marketing</a></li>
+                <li><a href="farm-analytics.html">Analytics</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about-us.html">About</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="page-header">
+            <h2>Farm Analytics Dashboard</h2>
+            <p>Track your crop performance, expenses, and profitability</p>
+        </section>
+
+        <!-- Filter Controls -->
+        <section id="filter-controls">
+            <h3>Filter Data</h3>
+            <form>
+                <div class="filter-group">
+                    <label for="date-range">Date Range</label>
+                    <select id="date-range">
+                        <option value="last-week">Last Week</option>
+                        <option value="last-month" selected>Last Month</option>
+                        <option value="last-quarter">Last Quarter</option>
+                        <option value="last-year">Last Year</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="start-date">Start Date</label>
+                    <input type="date" id="start-date">
+                </div>
+
+                <div class="filter-group">
+                    <label for="end-date">End Date</label>
+                    <input type="date" id="end-date">
+                </div>
+
+                <div class="filter-group">
+                    <label for="crop-select">Select Crop</label>
+                    <select id="crop-select">
+                        <option value="all">All Crops</option>
+                        <option value="maize">Maize</option>
+                        <option value="bananas">Bananas</option>
+                        <option value="tomatoes">Tomatoes</option>
+                        <option value="avocados">Avocados</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="region-select">Select Region</label>
+                    <select id="region-select">
+                        <option value="all">All Regions</option>
+                        <option value="nairobi">Nairobi</option>
+                        <option value="kiambu">Kiambu</option>
+                        <option value="eldoret">Eldoret</option>
+                        <option value="nakuru">Nakuru</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="apply-filters">Apply Filters</button>
+            </form>
+        </section>
+
+        <!-- Crop vs Profit Comparison -->
+        <section id="crop-profit-comparison">
+            <h3>Crop vs Profit Comparison</h3>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crop Type</th>
+                            <th>Total Yield (kg)</th>
+                            <th>Production Cost</th>
+                            <th>Revenue</th>
+                            <th>Profit</th>
+                            <th>Profit Margin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maize</td>
+                            <td>1,200</td>
+                            <td>KSh 24,000</td>
+                            <td>KSh 36,000</td>
+                            <td>KSh 12,000</td>
+                            <td>33%</td>
+                        </tr>
+                        <tr>
+                            <td>Tomatoes</td>
+                            <td>850</td>
+                            <td>KSh 34,000</td>
+                            <td>KSh 68,000</td>
+                            <td>KSh 34,000</td>
+                            <td>50%</td>
+                        </tr>
+                        <tr>
+                            <td>Avocados</td>
+                            <td>600</td>
+                            <td>KSh 18,000</td>
+                            <td>KSh 42,000</td>
+                            <td>KSh 24,000</td>
+                            <td>57%</td>
+                        </tr>
+                        <tr>
+                            <td>Bananas</td>
+                            <td>1,500</td>
+                            <td>KSh 30,000</td>
+                            <td>KSh 45,000</td>
+                            <td>KSh 15,000</td>
+                            <td>33%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Expenditure Report -->
+        <section id="expenditure-report">
+            <h3>Weekly/Monthly Expenditure Report</h3>
+            <div class="expense-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Last Week</th>
+                            <th>Last Month</th>
+                            <th>Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Labor</td>
+                            <td>KSh 8,500</td>
+                            <td>KSh 32,000</td>
+                            <td>+276%</td>
+                        </tr>
+                        <tr>
+                            <td>Seeds/Seedlings</td>
+                            <td>KSh 2,000</td>
+                            <td>KSh 7,500</td>
+                            <td>+275%</td>
+                        </tr>
+                        <tr>
+                            <td>Fertilizers</td>
+                            <td>KSh 3,200</td>
+                            <td>KSh 12,800</td>
+                            <td>+300%</td>
+                        </tr>
+                        <tr>
+                            <td>Equipment</td>
+                            <td>KSh 1,500</td>
+                            <td>KSh 6,000</td>
+                            <td>+300%</td>
+                        </tr>
+                        <tr>
+                            <td>Transport</td>
+                            <td>KSh 2,800</td>
+                            <td>KSh 9,600</td>
+                            <td>+243%</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>Total</th>
+                            <th>KSh 18,000</th>
+                            <th>KSh 67,900</th>
+                            <th>+277%</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- Crop Yield Summary -->
+        <section id="crop-yield-summary">
+            <h3>Crop Yield Summary</h3>
+            <div class="yield-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Crop Type</th>
+                            <th>Yield (kg)</th>
+                            <th>Season</th>
+                            <th>Land Size (acres)</th>
+                            <th>Yield per Acre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maize</td>
+                            <td>1,200</td>
+                            <td>Long Rains 2023</td>
+                            <td>2</td>
+                            <td>600 kg/acre</td>
+                        </tr>
+                        <tr>
+                            <td>Tomatoes</td>
+                            <td>850</td>
+                            <td>Long Rains 2023</td>
+                            <td>0.5</td>
+                            <td>1,700 kg/acre</td>
+                        </tr>
+                        <tr>
+                            <td>Avocados</td>
+                            <td>600</td>
+                            <td>Year-round</td>
+                            <td>1</td>
+                            <td>600 kg/acre</td>
+                        </tr>
+                        <tr>
+                            <td>Bananas</td>
+                            <td>1,500</td>
+                            <td>Year-round</td>
+                            <td>0.75</td>
+                            <td>2,000 kg/acre</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Chart Placeholders -->
+        <section id="chart-section">
+            <h3>Visual Reports</h3>
+            
+            <article class="chart-container" id="line-chart-container">
+                <h4>Monthly Revenue</h4>
+                <div class="chart-placeholder">
+                    <p>[Line chart showing revenue trends over time will appear here]</p>
+                </div>
+            </article>
+
+            <article class="chart-container" id="pie-chart-container">
+                <h4>Expense Distribution</h4>
+                <div class="chart-placeholder">
+                    <p>[Pie chart showing expense categories will appear here]</p>
+                </div>
+            </article>
+
+            <article class="chart-container" id="bar-chart-container">
+                <h4>Crop Productivity Comparison</h4>
+                <div class="chart-placeholder">
+                    <p>[Bar chart comparing crop yields will appear here]</p>
+                </div>
+            </article>
+
+            <article class="chart-container" id="area-chart-container">
+                <h4>Cumulative Profit Growth</h4>
+                <div class="chart-placeholder">
+                    <p>[Area chart showing profit accumulation will appear here]</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Insights Block -->
+        <section id="insights-block">
+            <h3>Analytics Insights</h3>
+            <div class="insights-list">
+                <article class="insight">
+                    <h4>Yield Improvement</h4>
+                    <p>Your maize yield was 10% higher this season compared to last year's same season.</p>
+                </article>
+                
+                <article class="insight">
+                    <h4>Investment Recommendation</h4>
+                    <p>Consider investing more in irrigation systems to maintain yields during dry months.</p>
+                </article>
+                
+                <article class="insight">
+                    <h4>Profit Opportunity</h4>
+                    <p>Tomatoes showed the highest profit margin at 50%. Consider expanding tomato production.</p>
+                </article>
+                
+                <article class="insight">
+                    <h4>Cost Alert</h4>
+                    <p>Labor costs increased by 276% month-over-month. Review your staffing strategy.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter-signup">
+                <h4>Stay Updated</h4>
+                <form>
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h4>Contact Us</h4>
+                <p>Email: analytics@bitagric.com</p>
+                <p>Phone: +254 700 654321</p>
+            </div>
+
+            <div class="social-links">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#facebook">Facebook</a></li>
+                    <li><a href="#twitter">Twitter</a></li>
+                    <li><a href="#instagram">Instagram</a></li>
+                    <li><a href="#youtube">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2023 BitAgric Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+</main>
+    <script src="farm-analytics.js"></script>
+
+</body>
+</html>
