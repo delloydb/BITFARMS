@@ -5,14 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agricultural Encyclopedia | BitAgric</title>
     <meta name="description" content="Comprehensive agricultural encyclopedia featuring fruits, vegetables, and herbs with detailed growing information">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="agricultural-encyclopedia.css">
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Main Header / Navigation -->
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo">BitAgric</a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>BitAgric</span>
+            </a>
             
-            <nav class="main-nav">
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="main-nav" id="primary-navigation">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="agricultural-encyclopedia.html" class="nav-link active">Encyclopedia</a></li>
@@ -20,235 +37,444 @@
                     <li class="nav-item"><a href="marketing-sales.html" class="nav-link">Marketing</a></li>
                     <li class="nav-item"><a href="farm-analytics.html" class="nav-link">Analytics</a></li>
                     <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-                    <li class="nav-item"><a href="about-us.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="contact-us.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon light-icon">☀️</span>
+                    <span class="theme-icon dark-icon">🌙</span>
+                </button>
+                <a href="contact-us.html" class="btn btn-outline">Contact</a>
+            </div>
         </div>
     </header>
 
-    <main class="encyclopedia-page">
+    <main id="main-content" class="encyclopedia-page">
         <!-- Page Intro Section -->
         <section class="page-intro">
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Agricultural Encyclopedia</span>
+            </div>
             <h1 class="page-title">Agricultural Encyclopedia</h1>
-            <p class="page-subtitle">Explore and learn about fruits, vegetables, and herbs from around the world.</p>
+            <p class="page-subtitle">Explore and learn about fruits, vegetables, and herbs from around the world. Our comprehensive database includes growing guides, nutritional information, and cultivation tips.</p>
         </section>
 
         <!-- Search & Filter Section -->
         <section class="search-filter">
-            <form class="search-form">
+            <form class="search-form" id="encyclopedia-filters">
                 <div class="search-group">
                     <label for="crop-search" class="sr-only">Search crops</label>
-                    <input type="search" id="crop-search" name="search" placeholder="Search crops..." class="search-input">
+                    <input type="search" id="crop-search" name="search" placeholder="Search crops..." class="search-input" aria-label="Search crops">
+                    <button type="button" class="search-clear" aria-label="Clear search">×</button>
                 </div>
                 
-                <div class="filter-group">
-                    <label for="category-filter" class="filter-label">Category</label>
-                    <select id="category-filter" name="category" class="filter-select">
-                        <option value="">All Categories</option>
-                        <option value="fruit">Fruit</option>
-                        <option value="vegetable">Vegetable</option>
-                        <option value="herb">Herb</option>
-                        <option value="grain">Grain</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="region-filter" class="filter-label">Region</label>
-                    <select id="region-filter" name="region" class="filter-select">
-                        <option value="">All Regions</option>
-                        <option value="tropical">Tropical</option>
-                        <option value="temperate">Temperate</option>
-                        <option value="arid">Arid</option>
-                        <option value="mediterranean">Mediterranean</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="climate-filter" class="filter-label">Climate</label>
-                    <select id="climate-filter" name="climate" class="filter-select">
-                        <option value="">All Climates</option>
-                        <option value="hot">Hot</option>
-                        <option value="cool">Cool</option>
-                        <option value="wet">Wet</option>
-                        <option value="dry">Dry</option>
-                    </select>
+                <div class="filter-accordion">
+                    <button type="button" class="filter-toggle" aria-expanded="false" aria-controls="filter-options">
+                        <span>Filters</span>
+                        <svg class="toggle-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M7 10l5 5 5-5z"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="filter-options" id="filter-options">
+                        <div class="filter-group">
+                            <label for="category-filter" class="filter-label">Category</label>
+                            <select id="category-filter" name="category" class="filter-select">
+                                <option value="">All Categories</option>
+                                <option value="fruit">Fruit</option>
+                                <option value="vegetable">Vegetable</option>
+                                <option value="herb">Herb</option>
+                                <option value="grain">Grain</option>
+                                <option value="legume">Legume</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="region-filter" class="filter-label">Region</label>
+                            <select id="region-filter" name="region" class="filter-select">
+                                <option value="">All Regions</option>
+                                <option value="tropical">Tropical</option>
+                                <option value="temperate">Temperate</option>
+                                <option value="arid">Arid</option>
+                                <option value="mediterranean">Mediterranean</option>
+                                <option value="continental">Continental</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="climate-filter" class="filter-label">Climate</label>
+                            <select id="climate-filter" name="climate" class="filter-select">
+                                <option value="">All Climates</option>
+                                <option value="hot">Hot</option>
+                                <option value="cool">Cool</option>
+                                <option value="wet">Wet</option>
+                                <option value="dry">Dry</option>
+                                <option value="moderate">Moderate</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="difficulty-filter" class="filter-label">Difficulty</label>
+                            <select id="difficulty-filter" name="difficulty" class="filter-select">
+                                <option value="">Any Difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 
                 <button type="submit" class="filter-btn">Apply Filters</button>
+                <button type="reset" class="filter-btn btn-outline">Reset</button>
             </form>
+            
+            <div class="active-filters" id="active-filters"></div>
         </section>
 
         <!-- Featured Crops Grid -->
         <section class="crop-grid">
             <!-- Crop 1: Tomato -->
-            <article class="crop-card">
+            <article class="crop-card" data-category="vegetable" data-region="temperate" data-climate="moderate" data-difficulty="easy">
                 <div class="crop-image">
-                    <img src="" alt="Ripe red tomatoes on vine" class="crop-img">
+                    <img src="assets/tomatoes.jpg" alt="Ripe red tomatoes on vine" class="crop-img" loading="lazy">
+                    <button class="bookmark-btn" aria-label="Bookmark tomato">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="crop-info">
                     <h2 class="crop-name">Tomato</h2>
                     <div class="crop-meta">
                         <span class="crop-category">Vegetable</span>
                         <span class="crop-region">Temperate</span>
+                        <span class="crop-difficulty easy">Easy</span>
                     </div>
-                    <p class="crop-desc">A versatile warm-season crop with hundreds of varieties, rich in lycopene and vitamin C.</p>
-                    <a href="#" class="crop-link">View More</a>
+                    <p class="crop-desc">A versatile warm-season crop with hundreds of varieties, rich in lycopene and vitamin C. Grows best in moderate climates with well-drained soil.</p>
+                    <div class="crop-footer">
+                        <a href="crop-tomato.html" class="crop-link">View Growing Guide</a>
+                        <div class="crop-icons">
+                            <span class="icon-tooltip" data-tooltip="Full Sun">☀️</span>
+                            <span class="icon-tooltip" data-tooltip="60-90 Days">📅</span>
+                            <span class="icon-tooltip" data-tooltip="pH 6.0-6.8">🧪</span>
+                        </div>
+                    </div>
                 </div>
             </article>
             
             <!-- Crop 2: Mango -->
-            <article class="crop-card">
+            <article class="crop-card" data-category="fruit" data-region="tropical" data-climate="hot" data-difficulty="medium">
                 <div class="crop-image">
-                    <img src="" alt="Ripe mangoes on tree" class="crop-img">
+                    <img src="assets/mangoes.jpg" alt="Ripe mangoes on tree" class="crop-img" loading="lazy">
+                    <button class="bookmark-btn" aria-label="Bookmark mango">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="crop-info">
                     <h2 class="crop-name">Mango</h2>
                     <div class="crop-meta">
                         <span class="crop-category">Fruit</span>
                         <span class="crop-region">Tropical</span>
+                        <span class="crop-difficulty medium">Medium</span>
                     </div>
-                    <p class="crop-desc">Sweet tropical fruit with many varieties, rich in vitamins A and C, requiring warm temperatures.</p>
-                    <a href="#" class="crop-link">View More</a>
+                    <p class="crop-desc">Sweet tropical fruit with many varieties, rich in vitamins A and C, requiring warm temperatures. Trees can grow up to 100 feet tall.</p>
+                    <div class="crop-footer">
+                        <a href="crop-mango.html" class="crop-link">View Growing Guide</a>
+                        <div class="crop-icons">
+                            <span class="icon-tooltip" data-tooltip="Full Sun">☀️</span>
+                            <span class="icon-tooltip" data-tooltip="3-6 Years">📅</span>
+                            <span class="icon-tooltip" data-tooltip="pH 5.5-7.5">🧪</span>
+                        </div>
+                    </div>
                 </div>
             </article>
             
             <!-- Crop 3: Spinach -->
-            <article class="crop-card">
+            <article class="crop-card" data-category="vegetable" data-region="temperate" data-climate="cool" data-difficulty="easy">
                 <div class="crop-image">
-                    <img src="" alt="Fresh green spinach leaves" class="crop-img">
+                    <img src="assets/spinach.jpg" alt="Fresh green spinach leaves" class="crop-img" loading="lazy">
+                    <button class="bookmark-btn" aria-label="Bookmark spinach">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="crop-info">
                     <h2 class="crop-name">Spinach</h2>
                     <div class="crop-meta">
                         <span class="crop-category">Vegetable</span>
                         <span class="crop-region">Temperate</span>
+                        <span class="crop-difficulty easy">Easy</span>
                     </div>
-                    <p class="crop-desc">Nutrient-dense leafy green that grows best in cool weather, packed with iron and vitamins.</p>
-                    <a href="#" class="crop-link">View More</a>
+                    <p class="crop-desc">Nutrient-dense leafy green that grows best in cool weather, packed with iron and vitamins. Quick-growing with multiple harvests possible.</p>
+                    <div class="crop-footer">
+                        <a href="crop-spinach.html" class="crop-link">View Growing Guide</a>
+                        <div class="crop-icons">
+                            <span class="icon-tooltip" data-tooltip="Partial Shade">⛅</span>
+                            <span class="icon-tooltip" data-tooltip="37-45 Days">📅</span>
+                            <span class="icon-tooltip" data-tooltip="pH 6.5-7.5">🧪</span>
+                        </div>
+                    </div>
                 </div>
             </article>
             
             <!-- Crop 4: Cassava -->
-            <article class="crop-card">
+            <article class="crop-card" data-category="vegetable" data-region="tropical" data-climate="hot" data-difficulty="easy">
                 <div class="crop-image">
-                    <img src="" alt="Cassava roots and leaves" class="crop-img">
+                    <img src="assets/cassava.jpg" alt="Cassava roots and leaves" class="crop-img" loading="lazy">
+                    <button class="bookmark-btn" aria-label="Bookmark cassava">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="crop-info">
                     <h2 class="crop-name">Cassava</h2>
                     <div class="crop-meta">
                         <span class="crop-category">Vegetable</span>
                         <span class="crop-region">Tropical</span>
+                        <span class="crop-difficulty easy">Easy</span>
                     </div>
-                    <p class="crop-desc">Starchy root crop important in tropical regions, drought-resistant with high carbohydrate content.</p>
-                    <a href="#" class="crop-link">View More</a>
+                    <p class="crop-desc">Starchy root crop important in tropical regions, drought-resistant with high carbohydrate content. Requires 8-12 months to mature.</p>
+                    <div class="crop-footer">
+                        <a href="crop-cassava.html" class="crop-link">View Growing Guide</a>
+                        <div class="crop-icons">
+                            <span class="icon-tooltip" data-tooltip="Full Sun">☀️</span>
+                            <span class="icon-tooltip" data-tooltip="8-12 Months">📅</span>
+                            <span class="icon-tooltip" data-tooltip="pH 5.5-6.5">🧪</span>
+                        </div>
+                    </div>
                 </div>
             </article>
             
             <!-- Crop 5: Basil -->
-            <article class="crop-card">
+            <article class="crop-card" data-category="herb" data-region="temperate" data-climate="moderate" data-difficulty="easy">
                 <div class="crop-image">
-                    <img src="" alt="Fresh basil leaves" class="crop-img">
+                    <img src="assets/basil.jpg" alt="Fresh basil leaves" class="crop-img" loading="lazy">
+                    <button class="bookmark-btn" aria-label="Bookmark basil">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="crop-info">
                     <h2 class="crop-name">Basil</h2>
                     <div class="crop-meta">
                         <span class="crop-category">Herb</span>
                         <span class="crop-region">Temperate</span>
+                        <span class="crop-difficulty easy">Easy</span>
                     </div>
-                    <p class="crop-desc">Aromatic herb used in many cuisines, requires warm temperatures and well-drained soil.</p>
-                    <a href="#" class="crop-link">View More</a>
+                    <p class="crop-desc">Aromatic herb used in many cuisines, requires warm temperatures and well-drained soil. Pinch flowers to prolong leaf production.</p>
+                    <div class="crop-footer">
+                        <a href="crop-basil.html" class="crop-link">View Growing Guide</a>
+                        <div class="crop-icons">
+                            <span class="icon-tooltip" data-tooltip="Full Sun">☀️</span>
+                            <span class="icon-tooltip" data-tooltip="60-90 Days">📅</span>
+                            <span class="icon-tooltip" data-tooltip="pH 6.0-7.5">🧪</span>
+                        </div>
+                    </div>
                 </div>
             </article>
             
             <!-- Crop 6: Banana -->
-            <article class="crop-card">
+            <article class="crop-card" data-category="fruit" data-region="tropical" data-climate="hot" data-difficulty="medium">
                 <div class="crop-image">
-                    <img src="" alt="Banana bunch on tree" class="crop-img">
+                    <img src="assets/banana.jpg" alt="Banana bunch on tree" class="crop-img" loading="lazy">
+                    <button class="bookmark-btn" aria-label="Bookmark banana">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
                 </div>
                 <div class="crop-info">
                     <h2 class="crop-name">Banana</h2>
                     <div class="crop-meta">
                         <span class="crop-category">Fruit</span>
                         <span class="crop-region">Tropical</span>
+                        <span class="crop-difficulty medium">Medium</span>
                     </div>
-                    <p class="crop-desc">One of the most popular tropical fruits, rich in potassium and grown in warm, humid climates.</p>
-                    <a href="#" class="crop-link">View More</a>
+                    <p class="crop-desc">One of the most popular tropical fruits, rich in potassium and grown in warm, humid climates. Plants fruit in 9-12 months.</p>
+                    <div class="crop-footer">
+                        <a href="crop-banana.html" class="crop-link">View Growing Guide</a>
+                        <div class="crop-icons">
+                            <span class="icon-tooltip" data-tooltip="Full Sun">☀️</span>
+                            <span class="icon-tooltip" data-tooltip="9-12 Months">📅</span>
+                            <span class="icon-tooltip" data-tooltip="pH 5.5-7.0">🧪</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Crop 7: Wheat -->
+            <article class="crop-card" data-category="grain" data-region="temperate" data-climate="moderate" data-difficulty="medium">
+                <div class="crop-image">
+                    <img src="assets/wheat.jpg" alt="Golden wheat field" class="crop-img" loading="lazy">
+                    <button class="bookmark-btn" aria-label="Bookmark wheat">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="crop-info">
+                    <h2 class="crop-name">Wheat</h2>
+                    <div class="crop-meta">
+                        <span class="crop-category">Grain</span>
+                        <span class="crop-region">Temperate</span>
+                        <span class="crop-difficulty medium">Medium</span>
+                    </div>
+                    <p class="crop-desc">Staple cereal grain grown worldwide, used for flour, bread, and other products. Requires well-drained soil and cool growing season.</p>
+                    <div class="crop-footer">
+                        <a href="crop-wheat.html" class="crop-link">View Growing Guide</a>
+                        <div class="crop-icons">
+                            <span class="icon-tooltip" data-tooltip="Full Sun">☀️</span>
+                            <span class="icon-tooltip" data-tooltip="110-130 Days">📅</span>
+                            <span class="icon-tooltip" data-tooltip="pH 6.0-7.0">🧪</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Crop 8: Rosemary -->
+            <article class="crop-card" data-category="herb" data-region="mediterranean" data-climate="moderate" data-difficulty="easy">
+                <div class="crop-image">
+                    <img src="assets/rosemary.jpg" alt="Rosemary bush with flowers" class="crop-img" loading="lazy">
+                    <button class="bookmark-btn" aria-label="Bookmark rosemary">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="crop-info">
+                    <h2 class="crop-name">Rosemary</h2>
+                    <div class="crop-meta">
+                        <span class="crop-category">Herb</span>
+                        <span class="crop-region">Mediterranean</span>
+                        <span class="crop-difficulty easy">Easy</span>
+                    </div>
+                    <p class="crop-desc">Fragrant evergreen herb with needle-like leaves, drought-tolerant once established. Prefers full sun and well-drained soil.</p>
+                    <div class="crop-footer">
+                        <a href="crop-rosemary.html" class="crop-link">View Growing Guide</a>
+                        <div class="crop-icons">
+                            <span class="icon-tooltip" data-tooltip="Full Sun">☀️</span>
+                            <span class="icon-tooltip" data-tooltip="Perennial">📅</span>
+                            <span class="icon-tooltip" data-tooltip="pH 6.0-7.0">🧪</span>
+                        </div>
+                    </div>
                 </div>
             </article>
         </section>
 
-        <!-- Crop Detail Structure (Comment Only) -->
-        <!-- 
-        <article class="crop-detail">
-            <div class="detail-header">
-                <h1 class="detail-title">Crop Name</h1>
-                <div class="detail-meta">
-                    <span class="scientific-name">Scientific Name</span>
-                    <span class="category">Category</span>
-                    <span class="origin">Origin</span>
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="pagination-btn" disabled>Previous</button>
+            <button class="pagination-btn active">1</button>
+            <button class="pagination-btn">2</button>
+            <button class="pagination-btn">3</button>
+            <span class="pagination-ellipsis">...</span>
+            <button class="pagination-btn">8</button>
+            <button class="pagination-btn">Next</button>
+        </div>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">Get Growing Tips</h2>
+                    <p class="newsletter-desc">Subscribe to our monthly newsletter for seasonal growing advice, new crop features, and exclusive content.</p>
                 </div>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <label for="newsletter-email" class="sr-only">Email Address</label>
+                        <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required class="newsletter-input">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </div>
+                    <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
             </div>
-            
-            <div class="detail-content">
-                <div class="detail-image">
-                    <img src="" alt="" class="main-image">
-                    <div class="gallery">...</div>
-                </div>
-                
-                <div class="detail-sections">
-                    <section class="description">
-                        <h2>Description</h2>
-                        <p>...</p>
-                    </section>
-                    
-                    <section class="growing-guide">
-                        <h2>Growing Guide</h2>
-                        <div class="guide-item">
-                            <h3>Climate Requirements</h3>
-                            <p>...</p>
-                        </div>
-                        ...
-                    </section>
-                    
-                    <section class="nutrition">
-                        <h2>Nutritional Information</h2>
-                        <p>...</p>
-                    </section>
-                </div>
-            </div>
-        </article>
-        -->
+        </section>
     </main>
 
     <!-- Main Footer -->
     <footer class="main-footer">
         <div class="footer-container">
+            <!-- Footer About -->
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    <span class="logo-icon">🌱</span>
+                    <span>BitAgric</span>
+                </a>
+                <p class="footer-about-text">Empowering farmers with technology to grow more with less since 2015.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                    <a href="#" class="social-icon" aria-label="Twitter">t</a>
+                    <a href="#" class="social-icon" aria-label="Instagram">i</a>
+                    <a href="#" class="social-icon" aria-label="YouTube">y</a>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
             <div class="footer-nav">
-                <h3 class="footer-title">Quick Links</h3>
+                <h3 class="footer-title">Resources</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
                     <li><a href="agricultural-encyclopedia.html">Encyclopedia</a></li>
-                    <li><a href="budget-planning.html">Budgeting</a></li>
-                    <li><a href="marketing-sales.html">Marketing</a></li>
+                    <li><a href="farm-knowledge.html">Knowledge Center</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="webinars.html">Webinars</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-nav">
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="press.html">Press</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </div>
             
-            <div class="footer-social">
-                <h3 class="footer-title">Connect</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-icon" aria-label="Facebook"><span class="icon-placeholder"></span></a>
-                    <a href="#" class="social-icon" aria-label="Twitter"><span class="icon-placeholder"></span></a>
-                    <a href="#" class="social-icon" aria-label="Instagram"><span class="icon-placeholder"></span></a>
-                </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="cookies.html">Cookie Policy</a></li>
+                    <li><a href="gdpr.html">GDPR</a></li>
+                </ul>
             </div>
             
-            <div class="footer-copyright">
-                <p>&copy; <span class="year">2023</span> BitAgric. All rights reserved.</p>
+            <!-- Footer Contact -->
+            <div class="footer-contact">
+                <h3 class="footer-title">Get in Touch</h3>
+                <address>
+                    <p>123 Farm Tech Avenue<br>Agri Valley, CA 90210</p>
+                    <p><a href="mailto:hello@bitagric.com">hello@bitagric.com</a></p>
+                    <p><a href="tel:+18005551234">(800) 555-1234</a></p>
+                </address>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; <span class="year">2023</span> BitAgric. All rights reserved.</p>
+            <div class="footer-lang">
+                <label for="language-select" class="sr-only">Language</label>
+                <select id="language-select" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="pt">Português</option>
+                </select>
             </div>
         </div>
     </footer>
+
     <script src="agricultural-encyclopedia.js"></script>
 </body>
 </html>
