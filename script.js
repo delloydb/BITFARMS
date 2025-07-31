@@ -1,159 +1,169 @@
-// script.js
 /**
- * BitAgric Main Script
- * Handles all interactive functionality for the homepage
+ * BitAgric - Modern Farming Website
+ * Script for theme toggle, mobile navigation, and other interactivity
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Sticky Header
-  const header = document.querySelector('.main-header');
-  const heroSection = document.querySelector('.hero-section');
-  const heroHeight = heroSection.offsetHeight;
-  
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > heroHeight) {
-      header.classList.add('sticky');
-    } else {
-      header.classList.remove('sticky');
-    }
-  });
-
-  // Smooth Scrolling for Anchor Links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // Scroll Reveal Animations
-  const animateOnScroll = function() {
-    const elements = document.querySelectorAll('.feature-card, .insight-card, .benefit-card, .testimonial-card');
+    // Theme Toggle Functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
     
-    elements.forEach(element => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-      
-      if (elementPosition < windowHeight - 100) {
-        element.classList.add('slide-up');
-      }
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    
+    // Update toggle button state
+    if (currentTheme === 'dark') {
+        themeToggle.setAttribute('aria-pressed', 'true');
+    }
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.setAttribute('aria-pressed', newTheme === 'dark');
     });
-  };
-  
-  // Initial check on load
-  animateOnScroll();
-  
-  // Check on scroll
-  window.addEventListener('scroll', animateOnScroll);
-
-  // Newsletter Form Validation
-  const newsletterForm = document.querySelector('.newsletter-form');
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const emailInput = this.querySelector('input[type="email"]');
-      const email = emailInput.value.trim();
-      
-      if (!isValidEmail(email)) {
-        showFormError(emailInput, 'Please enter a valid email address');
-        return;
-      }
-      
-      // Simulate successful submission
-      showFormSuccess(emailInput, 'Thank you for subscribing!');
-      emailInput.value = '';
-      
-      // In a real implementation, you would send the data to your server here
-      // Example: fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
+    
+    // Mobile Navigation Toggle
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const primaryNav = document.querySelector('.main-nav');
+    
+    mobileNavToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        primaryNav.setAttribute('data-visible', !isExpanded);
+        
+        // Toggle body scroll when nav is open
+        document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
     });
-  }
-  
-  // Footer Newsletter Form
-  const footerNewsletterForm = document.querySelector('.footer-newsletter-form');
-  if (footerNewsletterForm) {
-    footerNewsletterForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const emailInput = this.querySelector('input[type="email"]');
-      const email = emailInput.value.trim();
-      
-      if (!isValidEmail(email)) {
-        showFormError(emailInput, 'Please enter a valid email address');
-        return;
-      }
-      
-      // Simulate successful submission
-      showFormSuccess(emailInput, 'Thank you!');
-      emailInput.value = '';
+    
+    // Close mobile nav when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                mobileNavToggle.setAttribute('aria-expanded', 'false');
+                primaryNav.setAttribute('data-visible', 'false');
+                document.body.style.overflow = 'auto';
+            }
+        });
     });
-  }
-  
-  // Update Copyright Year
-  const yearElement = document.querySelector('.year');
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
+    
+    // Update copyright year dynamically
+    const yearElement = document.querySelector('.year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Pricing toggle functionality
+    const billingToggle = document.getElementById('billing-toggle');
+    if (billingToggle) {
+        billingToggle.addEventListener('change', function() {
+            const monthlyPrices = document.querySelectorAll('.price-amount');
+            monthlyPrices.forEach(price => {
+                const currentPrice = parseFloat(price.textContent);
+                const newPrice = this.checked ? (currentPrice * 12 * 0.8).toFixed(0) : (currentPrice / 12 / 0.8).toFixed(0);
+                price.textContent = newPrice;
+            });
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Add focus styles for keyboard navigation
+    document.addEventListener('keyup', function(e) {
+        if (e.key === 'Tab') {
+            document.documentElement.classList.add('keyboard-focus');
+        }
+    });
+    
+    document.addEventListener('mousedown', function() {
+        document.documentElement.classList.remove('keyboard-focus');
+    });
+    
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    } else {
+        // Fallback for browsers that don't support lazy loading
+        const lazyScript = document.createElement('script');
+        lazyScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
+        document.body.appendChild(lazyScript);
+    }
+    
+    // Video play button functionality
+    const playButton = document.querySelector('.play-button');
+    if (playButton) {
+        playButton.addEventListener('click', function() {
+            // In a real implementation, this would open a modal with the video
+            alert('Video playback would start here in a real implementation.');
+        });
+    }
+    
+    // Form submission handling
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, this would send the form data to a server
+            if (this.classList.contains('newsletter-form')) {
+                alert('Thanks for subscribing to our newsletter!');
+                this.reset();
+            } else if (this.classList.contains('footer-newsletter-form')) {
+                alert('Thanks for signing up for our newsletter!');
+                this.reset();
+            }
+        });
+    });
+    
+    // Accessibility enhancements
+    document.addEventListener('keydown', function(e) {
+        // Close mobile menu on Escape key
+        if (e.key === 'Escape' && window.innerWidth <= 768) {
+            const isExpanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+            if (isExpanded) {
+                mobileNavToggle.click();
+            }
+        }
+    });
+    
+    // Add focus trapping for mobile menu
+    if (primaryNav) {
+        primaryNav.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab' && window.innerWidth <= 768) {
+                const focusableElements = primaryNav.querySelectorAll('a, button');
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (e.shiftKey && document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                } else if (!e.shiftKey && document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        });
+    }
 });
-
-// Helper Functions
-function isValidEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-}
-
-function showFormError(inputElement, message) {
-  // Remove any existing error messages
-  const existingError = inputElement.parentElement.querySelector('.error-message');
-  if (existingError) existingError.remove();
-  
-  // Add error class to input
-  inputElement.classList.add('error');
-  
-  // Create and display error message
-  const errorElement = document.createElement('div');
-  errorElement.className = 'error-message';
-  errorElement.textContent = message;
-  errorElement.style.color = '#ff4444';
-  errorElement.style.marginTop = '5px';
-  errorElement.style.fontSize = '0.8rem';
-  
-  inputElement.parentElement.appendChild(errorElement);
-  
-  // Focus the input
-  inputElement.focus();
-}
-
-function showFormSuccess(inputElement, message) {
-  // Remove any existing messages
-  const existingMessage = inputElement.parentElement.querySelector('.success-message');
-  if (existingMessage) existingMessage.remove();
-  
-  // Remove error class if present
-  inputElement.classList.remove('error');
-  
-  // Create and display success message
-  const successElement = document.createElement('div');
-  successElement.className = 'success-message';
-  successElement.textContent = message;
-  successElement.style.color = '#00C851';
-  successElement.style.marginTop = '5px';
-  successElement.style.fontSize = '0.9rem';
-  
-  inputElement.parentElement.appendChild(successElement);
-  
-  // Remove message after 3 seconds
-  setTimeout(() => {
-    successElement.remove();
-  }, 3000);
-}
