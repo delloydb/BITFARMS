@@ -3,252 +3,542 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agricultural Encyclopedia | BitAgric</title>
-    <meta name="description" content="Comprehensive agricultural encyclopedia featuring fruits, vegetables, and herbs with detailed growing information">
+    <title>BitAgric - Grow Smarter. Farm Better.</title>
+    <meta name="description" content="Your all-in-one hub for modern farming knowledge, records, and market access">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Main Header / Navigation -->
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo">BitAgric</a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>BitAgric</span>
+            </a>
             
-            <nav class="main-nav">
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="main-nav" id="primary-navigation">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="agricultural-encyclopedia.html" class="nav-link active">Encyclopedia</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="agricultural-encyclopedia.html" class="nav-link">Encyclopedia</a></li>
+                    <li class="nav-item"><a href="farm-knowledge.html" class="nav-link">Knowledge</a></li>
                     <li class="nav-item"><a href="budget-planning.html" class="nav-link">Budgeting</a></li>
                     <li class="nav-item"><a href="marketing-sales.html" class="nav-link">Marketing</a></li>
                     <li class="nav-item"><a href="farm-analytics.html" class="nav-link">Analytics</a></li>
                     <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-                    <li class="nav-item"><a href="about-us.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="contact-us.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon light-icon">☀️</span>
+                    <span class="theme-icon dark-icon">🌙</span>
+                </button>
+                <a href="contact-us.html" class="btn btn-outline">Contact</a>
+            </div>
         </div>
     </header>
 
-    <main class="encyclopedia-page">
-        <!-- Page Intro Section -->
-        <section class="page-intro">
-            <h1 class="page-title">Agricultural Encyclopedia</h1>
-            <p class="page-subtitle">Explore and learn about fruits, vegetables, and herbs from around the world.</p>
-        </section>
-
-        <!-- Search & Filter Section -->
-        <section class="search-filter">
-            <form class="search-form">
-                <div class="search-group">
-                    <label for="crop-search" class="sr-only">Search crops</label>
-                    <input type="search" id="crop-search" name="search" placeholder="Search crops..." class="search-input">
+    <main id="main-content" class="page-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-headline">Grow Smarter. <span class="highlight">Farm Better.</span></h1>
+                <p class="hero-subhead">Your all-in-one hub for modern farming knowledge, records, and market access. Join thousands of farmers revolutionizing agriculture with technology.</p>
+                <div class="hero-cta">
+                    <a href="agricultural-encyclopedia.html" class="btn btn-primary">Explore Encyclopedia</a>
+                    <a href="budget-planning.html" class="btn btn-secondary">Start Budget Planning</a>
                 </div>
-                
-                <div class="filter-group">
-                    <label for="category-filter" class="filter-label">Category</label>
-                    <select id="category-filter" name="category" class="filter-select">
-                        <option value="">All Categories</option>
-                        <option value="fruit">Fruit</option>
-                        <option value="vegetable">Vegetable</option>
-                        <option value="herb">Herb</option>
-                        <option value="grain">Grain</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="region-filter" class="filter-label">Region</label>
-                    <select id="region-filter" name="region" class="filter-select">
-                        <option value="">All Regions</option>
-                        <option value="tropical">Tropical</option>
-                        <option value="temperate">Temperate</option>
-                        <option value="arid">Arid</option>
-                        <option value="mediterranean">Mediterranean</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="climate-filter" class="filter-label">Climate</label>
-                    <select id="climate-filter" name="climate" class="filter-select">
-                        <option value="">All Climates</option>
-                        <option value="hot">Hot</option>
-                        <option value="cool">Cool</option>
-                        <option value="wet">Wet</option>
-                        <option value="dry">Dry</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="filter-btn">Apply Filters</button>
-            </form>
-        </section>
-
-        <!-- Featured Crops Grid -->
-        <section class="crop-grid">
-            <!-- Crop 1: Tomato -->
-            <article class="crop-card">
-                <div class="crop-image">
-                    <img src="" alt="Ripe red tomatoes on vine" class="crop-img">
-                </div>
-                <div class="crop-info">
-                    <h2 class="crop-name">Tomato</h2>
-                    <div class="crop-meta">
-                        <span class="crop-category">Vegetable</span>
-                        <span class="crop-region">Temperate</span>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15,000+</span>
+                        <span class="stat-label">Farmers</span>
                     </div>
-                    <p class="crop-desc">A versatile warm-season crop with hundreds of varieties, rich in lycopene and vitamin C.</p>
-                    <a href="#" class="crop-link">View More</a>
-                </div>
-            </article>
-            
-            <!-- Crop 2: Mango -->
-            <article class="crop-card">
-                <div class="crop-image">
-                    <img src="" alt="Ripe mangoes on tree" class="crop-img">
-                </div>
-                <div class="crop-info">
-                    <h2 class="crop-name">Mango</h2>
-                    <div class="crop-meta">
-                        <span class="crop-category">Fruit</span>
-                        <span class="crop-region">Tropical</span>
+                    <div class="stat-item">
+                        <span class="stat-number">250+</span>
+                        <span class="stat-label">Crop Guides</span>
                     </div>
-                    <p class="crop-desc">Sweet tropical fruit with many varieties, rich in vitamins A and C, requiring warm temperatures.</p>
-                    <a href="#" class="crop-link">View More</a>
-                </div>
-            </article>
-            
-            <!-- Crop 3: Spinach -->
-            <article class="crop-card">
-                <div class="crop-image">
-                    <img src="" alt="Fresh green spinach leaves" class="crop-img">
-                </div>
-                <div class="crop-info">
-                    <h2 class="crop-name">Spinach</h2>
-                    <div class="crop-meta">
-                        <span class="crop-category">Vegetable</span>
-                        <span class="crop-region">Temperate</span>
+                    <div class="stat-item">
+                        <span class="stat-number">40%</span>
+                        <span class="stat-label">Avg. Yield Increase</span>
                     </div>
-                    <p class="crop-desc">Nutrient-dense leafy green that grows best in cool weather, packed with iron and vitamins.</p>
-                    <a href="#" class="crop-link">View More</a>
-                </div>
-            </article>
-            
-            <!-- Crop 4: Cassava -->
-            <article class="crop-card">
-                <div class="crop-image">
-                    <img src="" alt="Cassava roots and leaves" class="crop-img">
-                </div>
-                <div class="crop-info">
-                    <h2 class="crop-name">Cassava</h2>
-                    <div class="crop-meta">
-                        <span class="crop-category">Vegetable</span>
-                        <span class="crop-region">Tropical</span>
-                    </div>
-                    <p class="crop-desc">Starchy root crop important in tropical regions, drought-resistant with high carbohydrate content.</p>
-                    <a href="#" class="crop-link">View More</a>
-                </div>
-            </article>
-            
-            <!-- Crop 5: Basil -->
-            <article class="crop-card">
-                <div class="crop-image">
-                    <img src="" alt="Fresh basil leaves" class="crop-img">
-                </div>
-                <div class="crop-info">
-                    <h2 class="crop-name">Basil</h2>
-                    <div class="crop-meta">
-                        <span class="crop-category">Herb</span>
-                        <span class="crop-region">Temperate</span>
-                    </div>
-                    <p class="crop-desc">Aromatic herb used in many cuisines, requires warm temperatures and well-drained soil.</p>
-                    <a href="#" class="crop-link">View More</a>
-                </div>
-            </article>
-            
-            <!-- Crop 6: Banana -->
-            <article class="crop-card">
-                <div class="crop-image">
-                    <img src="" alt="Banana bunch on tree" class="crop-img">
-                </div>
-                <div class="crop-info">
-                    <h2 class="crop-name">Banana</h2>
-                    <div class="crop-meta">
-                        <span class="crop-category">Fruit</span>
-                        <span class="crop-region">Tropical</span>
-                    </div>
-                    <p class="crop-desc">One of the most popular tropical fruits, rich in potassium and grown in warm, humid climates.</p>
-                    <a href="#" class="crop-link">View More</a>
-                </div>
-            </article>
-        </section>
-
-        <!-- Crop Detail Structure (Comment Only) -->
-        <!-- 
-        <article class="crop-detail">
-            <div class="detail-header">
-                <h1 class="detail-title">Crop Name</h1>
-                <div class="detail-meta">
-                    <span class="scientific-name">Scientific Name</span>
-                    <span class="category">Category</span>
-                    <span class="origin">Origin</span>
                 </div>
             </div>
+            <div class="hero-image">
+                <img src="assets/farmer-tablet.jpg" alt="Happy farmer using digital tablet in field" class="hero-img" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Trust Badges Section -->
+        <section class="trust-section">
+            <p class="trust-text">Trusted by farmers and organizations worldwide</p>
+            <div class="trust-logos">
+                <span class="trust-logo">FAO</span>
+                <span class="trust-logo">Farmers Union</span>
+                <span class="trust-logo">AgriTech</span>
+                <span class="trust-logo">Sustainable Farms</span>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section class="features-section">
+            <div class="section-header">
+                <h2 class="section-title">Everything You Need in One Place</h2>
+                <p class="section-subtitle">Comprehensive tools designed specifically for modern farmers</p>
+            </div>
             
-            <div class="detail-content">
-                <div class="detail-image">
-                    <img src="" alt="" class="main-image">
-                    <div class="gallery">...</div>
-                </div>
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <article class="feature-card">
+                    <div class="feature-icon">
+                        <span aria-hidden="true">📊</span>
+                    </div>
+                    <h3 class="feature-title">Farm Records Management</h3>
+                    <p class="feature-desc">Track planting, harvesting, and inventory with our intuitive system that saves you hours each week.</p>
+                    <a href="farm-analytics.html" class="feature-link">Learn more →</a>
+                </article>
                 
-                <div class="detail-sections">
-                    <section class="description">
-                        <h2>Description</h2>
-                        <p>...</p>
-                    </section>
-                    
-                    <section class="growing-guide">
-                        <h2>Growing Guide</h2>
-                        <div class="guide-item">
-                            <h3>Climate Requirements</h3>
-                            <p>...</p>
+                <!-- Feature 2 -->
+                <article class="feature-card">
+                    <div class="feature-icon">
+                        <span aria-hidden="true">💰</span>
+                    </div>
+                    <h3 class="feature-title">Sales Tracking</h3>
+                    <p class="feature-desc">Monitor your produce sales and customer trends with real-time analytics and reporting.</p>
+                    <a href="marketing-sales.html" class="feature-link">Learn more →</a>
+                </article>
+                
+                <!-- Feature 3 -->
+                <article class="feature-card">
+                    <div class="feature-icon">
+                        <span aria-hidden="true">👨‍🌾</span>
+                    </div>
+                    <h3 class="feature-title">Worker Workflows</h3>
+                    <p class="feature-desc">Assign and track tasks across your farm workforce with mobile-friendly tools.</p>
+                    <a href="resources.html" class="feature-link">Learn more →</a>
+                </article>
+                
+                <!-- Feature 4 -->
+                <article class="feature-card">
+                    <div class="feature-icon">
+                        <span aria-hidden="true">🌽</span>
+                    </div>
+                    <h3 class="feature-title">Crop Encyclopedia</h3>
+                    <p class="feature-desc">Comprehensive growing guides for hundreds of crops with localized recommendations.</p>
+                    <a href="agricultural-encyclopedia.html" class="feature-link">Explore now →</a>
+                </article>
+                
+                <!-- Feature 5 -->
+                <article class="feature-card">
+                    <div class="feature-icon">
+                        <span aria-hidden="true">📅</span>
+                    </div>
+                    <h3 class="feature-title">Budget Planner</h3>
+                    <p class="feature-desc">Plan your farm finances and track expenses with seasonal forecasting tools.</p>
+                    <a href="budget-planning.html" class="feature-link">Get started →</a>
+                </article>
+                
+                <!-- Feature 6 -->
+                <article class="feature-card">
+                    <div class="feature-icon">
+                        <span aria-hidden="true">🛒</span>
+                    </div>
+                    <h3 class="feature-title">Market Access</h3>
+                    <p class="feature-desc">Connect directly with buyers and local markets through our integrated platform.</p>
+                    <a href="marketing-sales.html" class="feature-link">See options →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Video Demo Section -->
+        <section class="demo-section">
+            <div class="demo-content">
+                <h2 class="section-title">See BitAgric in Action</h2>
+                <p class="demo-text">Watch our 2-minute overview to see how BitAgric can transform your farming operations.</p>
+                <button class="btn btn-primary play-button" aria-label="Play demo video">
+                    ▶ Watch Demo
+                </button>
+            </div>
+            <div class="demo-video-placeholder">
+                <div class="video-thumbnail">
+                    <div class="play-icon">▶</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Insights Section -->
+        <section class="insights-section">
+            <div class="section-header">
+                <h2 class="section-title">Live Insights</h2>
+                <p class="section-subtitle">Real-time data to help you make informed decisions</p>
+            </div>
+            
+            <div class="insights-cards">
+                <!-- Insight 1 -->
+                <article class="insight-card">
+                    <div class="insight-badge">New</div>
+                    <h3 class="insight-title">Crop of the Day</h3>
+                    <p class="insight-content">Today we highlight sustainable tomato farming techniques that reduce water usage by up to 30%.</p>
+                    <a href="agricultural-encyclopedia.html#tomatoes" class="insight-link">Read more →</a>
+                </article>
+                
+                <!-- Insight 2 -->
+                <article class="insight-card">
+                    <h3 class="insight-title">Today's Market Price</h3>
+                    <p class="insight-content">Current average price for maize: <strong>$4.25 per kg</strong> (up 2.3% from yesterday).</p>
+                    <a href="marketing-sales.html#prices" class="insight-link">View market →</a>
+                </article>
+                
+                <!-- Insight 3 -->
+                <article class="insight-card">
+                    <h3 class="insight-title">Farm Tip of the Day</h3>
+                    <p class="insight-content">Rotate your crops to maintain soil fertility and reduce pests naturally without chemicals.</p>
+                    <a href="farm-knowledge.html#tips" class="insight-link">More tips →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="benefits-content">
+                <h2 class="section-title">Why Modern Agriculture Matters</h2>
+                <p class="benefits-intro">Agriculture isn't just about growing food—it's about sustaining communities, economies, and our planet.</p>
+                
+                <div class="benefits-grid">
+                    <!-- Benefit 1 -->
+                    <article class="benefit-card">
+                        <div class="benefit-icon">
+                            <span aria-hidden="true">🍽️</span>
                         </div>
-                        ...
-                    </section>
+                        <h3 class="benefit-title">Food Security</h3>
+                        <p class="benefit-desc">Sustainable farming ensures stable food supplies for communities worldwide, reducing hunger and malnutrition.</p>
+                    </article>
                     
-                    <section class="nutrition">
-                        <h2>Nutritional Information</h2>
-                        <p>...</p>
-                    </section>
+                    <!-- Benefit 2 -->
+                    <article class="benefit-card">
+                        <div class="benefit-icon">
+                            <span aria-hidden="true">📈</span>
+                        </div>
+                        <h3 class="benefit-title">Economic Growth</h3>
+                        <p class="benefit-desc">Agriculture drives local economies, creates employment, and supports rural development.</p>
+                    </article>
+                    
+                    <!-- Benefit 3 -->
+                    <article class="benefit-card">
+                        <div class="benefit-icon">
+                            <span aria-hidden="true">🌍</span>
+                        </div>
+                        <h3 class="benefit-title">Climate Resilience</h3>
+                        <p class="benefit-desc">Modern techniques help farms adapt to changing climates while reducing environmental impact.</p>
+                    </article>
+                    
+                    <!-- Benefit 4 -->
+                    <article class="benefit-card">
+                        <div class="benefit-icon">
+                            <span aria-hidden="true">❤️</span>
+                        </div>
+                        <h3 class="benefit-title">Healthy Living</h3>
+                        <p class="benefit-desc">Fresh, locally-grown produce supports better nutrition and reduces food miles.</p>
+                    </article>
                 </div>
             </div>
-        </article>
-        -->
+            <div class="benefits-image">
+                <img src="assets/farm-field.jpg" alt="Green farm field with crops growing" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2 class="section-title">What Farmers Say</h2>
+                <p class="section-subtitle">Join thousands of satisfied farmers using BitAgric</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <blockquote class="testimonial-quote">
+                        "BitAgric's tools helped me increase my yields by 30% while reducing water usage. The crop encyclopedia is my daily reference and the budgeting tools saved me thousands."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">James K.</div>
+                            <div class="author-title">Smallholder Farmer</div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Testimonial 2 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <blockquote class="testimonial-quote">
+                        "The budget planner transformed how I manage my farm finances. Now I can plan seasons ahead with confidence and make data-driven decisions."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Maria T.</div>
+                            <div class="author-title">Organic Farm Owner</div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Testimonial 3 -->
+                <article class="testimonial-card">
+                    <div class="testimonial-rating">★★★★☆</div>
+                    <blockquote class="testimonial-quote">
+                        "As a cooperative manager, BitAgric has helped us coordinate 50+ farms efficiently. The worker workflow tools are game-changers for team productivity."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <div class="author-name">Samuel O.</div>
+                            <div class="author-title">Cooperative Manager</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="section-header">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">Choose the plan that fits your farm's needs</p>
+            </div>
+            
+            <div class="pricing-toggle">
+                <span>Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="billing-toggle">
+                    <span class="slider"></span>
+                </label>
+                <span>Yearly <span class="discount-badge">Save 20%</span></span>
+            </div>
+            
+            <div class="pricing-cards">
+                <!-- Basic Plan -->
+                <article class="pricing-card">
+                    <h3 class="pricing-tier">Starter</h3>
+                    <p class="pricing-desc">Perfect for small farms getting started with digital tools</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$9</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Basic record keeping</li>
+                        <li>Access to crop encyclopedia</li>
+                        <li>Budget planning tools</li>
+                        <li>Email support</li>
+                    </ul>
+                    <button class="btn btn-outline">Get Started</button>
+                </article>
+                
+                <!-- Pro Plan -->
+                <article class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3 class="pricing-tier">Professional</h3>
+                    <p class="pricing-desc">For serious farmers who want full farm management</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$29</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Advanced analytics</li>
+                        <li>Worker management</li>
+                        <li>Market price alerts</li>
+                        <li>Priority support</li>
+                        <li>Mobile app access</li>
+                    </ul>
+                    <button class="btn btn-primary">Choose Plan</button>
+                </article>
+                
+                <!-- Enterprise Plan -->
+                <article class="pricing-card">
+                    <h3 class="pricing-tier">Enterprise</h3>
+                    <p class="pricing-desc">For large operations and cooperatives</p>
+                    <div class="pricing-price">
+                        <span class="price-amount">$99</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited users</li>
+                        <li>Custom reporting</li>
+                        <li>Dedicated account manager</li>
+                        <li>API access</li>
+                        <li>Training sessions</li>
+                    </ul>
+                    <button class="btn btn-outline">Contact Sales</button>
+                </article>
+            </div>
+            
+            <div class="pricing-footer">
+                <p>Not sure which plan is right for you? <a href="contact-us.html">Contact our team</a> for personalized recommendations.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                <details class="faq-item">
+                    <summary class="faq-question">Is there a free trial available?</summary>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a 14-day free trial with full access to all Professional plan features. No credit card required to start your trial.</p>
+                    </div>
+                </details>
+                
+                <!-- FAQ Item 2 -->
+                <details class="faq-item">
+                    <summary class="faq-question">Can I use BitAgric offline?</summary>
+                    <div class="faq-answer">
+                        <p>Our mobile apps support offline functionality for core features like record keeping. Your data will sync automatically when you reconnect.</p>
+                    </div>
+                </details>
+                
+                <!-- FAQ Item 3 -->
+                <details class="faq-item">
+                    <summary class="faq-question">How does the crop encyclopedia stay updated?</summary>
+                    <div class="faq-answer">
+                        <p>Our team of agricultural experts continuously updates content based on the latest research and regional farming practices.</p>
+                    </div>
+                </details>
+                
+                <!-- FAQ Item 4 -->
+                <details class="faq-item">
+                    <summary class="faq-question">What if I need help setting up?</summary>
+                    <div class="faq-answer">
+                        <p>We offer onboarding assistance for all plans, with dedicated setup help for Professional and Enterprise customers.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Farm?</h2>
+                <p class="cta-text">Join thousands of farmers using BitAgric to work smarter, not harder.</p>
+                <div class="cta-buttons">
+                    <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+                    <a href="demo.html" class="btn btn-secondary">Schedule Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">Stay Updated</h2>
+                    <p class="newsletter-desc">Get farming tips, market updates, and new feature announcements delivered to your inbox.</p>
+                </div>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your email address" required class="newsletter-input">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </div>
+                    <p class="newsletter-disclaimer">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </section>
     </main>
 
     <!-- Main Footer -->
     <footer class="main-footer">
         <div class="footer-container">
+            <!-- Footer About -->
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    <span class="logo-icon">🌱</span>
+                    <span>BitAgric</span>
+                </a>
+                <p class="footer-about-text">Empowering farmers with technology to grow more with less since 2015.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook">f</a>
+                    <a href="#" class="social-icon" aria-label="Twitter">t</a>
+                    <a href="#" class="social-icon" aria-label="Instagram">i</a>
+                    <a href="#" class="social-icon" aria-label="YouTube">y</a>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
             <div class="footer-nav">
-                <h3 class="footer-title">Quick Links</h3>
+                <h3 class="footer-title">Resources</h3>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
                     <li><a href="agricultural-encyclopedia.html">Encyclopedia</a></li>
-                    <li><a href="budget-planning.html">Budgeting</a></li>
-                    <li><a href="marketing-sales.html">Marketing</a></li>
+                    <li><a href="farm-knowledge.html">Knowledge Center</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="webinars.html">Webinars</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-nav">
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="press.html">Press</a></li>
                     <li><a href="contact-us.html">Contact</a></li>
                 </ul>
             </div>
             
-            <div class="footer-social">
-                <h3 class="footer-title">Connect</h3>
-                <div class="social-icons">
-                    <a href="#" class="social-icon" aria-label="Facebook"><span class="icon-placeholder"></span></a>
-                    <a href="#" class="social-icon" aria-label="Twitter"><span class="icon-placeholder"></span></a>
-                    <a href="#" class="social-icon" aria-label="Instagram"><span class="icon-placeholder"></span></a>
-                </div>
+            <div class="footer-nav">
+                <h3 class="footer-title">Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="cookies.html">Cookie Policy</a></li>
+                    <li><a href="gdpr.html">GDPR</a></li>
+                </ul>
             </div>
             
-            <div class="footer-copyright">
-                <p>&copy; <span class="year">2023</span> BitAgric. All rights reserved.</p>
+            <!-- Footer Contact -->
+            <div class="footer-contact">
+                <h3 class="footer-title">Get in Touch</h3>
+                <address>
+                    <p>123 Farm Tech Avenue<br>Agri Valley, CA 90210</p>
+                    <p><a href="mailto:hello@bitagric.com">hello@bitagric.com</a></p>
+                    <p><a href="tel:+18005551234">(800) 555-1234</a></p>
+                </address>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; <span class="year">2023</span> BitAgric. All rights reserved.</p>
+            <div class="footer-lang">
+                <label for="language-select" class="sr-only">Language</label>
+                <select id="language-select" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="pt">Português</option>
+                </select>
             </div>
         </div>
     </footer>
-    <script src="agricultural-encyclopedia.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
