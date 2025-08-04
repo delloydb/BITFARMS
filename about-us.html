@@ -5,252 +5,511 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About BitAgric | Empowering the Future of Farming</title>
     <meta name="description" content="Learn about BitAgric's mission, vision, values, and the team behind the platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="https://www.bitfarms.com/about-us"> 
 </head>
 <body>
-    
-    <!-- Header Navigation -->
-    <header>
-        <nav>
-            <h1>BitAgric</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="agricultural-encyclopedia.html">Encyclopedia</a></li>
-                <li><a href="budget-planning.html">Budgeting</a></li>
-                <li><a href="marketing-sales.html">Marketing</a></li>
-                <li><a href="farm-analytics.html">Analytics</a></li>
-                <li><a href="resources.html">Resources</a></li>
-                <li><a href="about-us.html">About</a></li>
-                <li><a href="contact-us.html">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Main Header / Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2L4 7v10l8 5 8-5V7L12 2zm0 2.5L18 9v6l-6 3.5-6-3.5V9l6-4.5z"/>
+                </svg>
+                <span>BitAgric</span>
+            </a>
+            
+            <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="main-nav" id="primary-navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="agricultural-encyclopedia.html" class="nav-link">Encyclopedia</a></li>
+                    <li class="nav-item"><a href="budget-planning.html" class="nav-link">Budgeting</a></li>
+                    <li class="nav-item"><a href="marketing-sales.html" class="nav-link">Marketing</a></li>
+                    <li class="nav-item"><a href="farm-analytics.html" class="nav-link">Analytics</a></li>
+                    <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li class="nav-item"><a href="about-us.html" class="nav-link active">About</a></li>
+                    <li class="nav-item"><a href="contact-us.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="theme-icon light-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
+                    </svg>
+                    <svg class="theme-icon dark-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z"/>
+                    </svg>
+                </button>
+                <a href="contact-us.html" class="btn btn-outline">Contact</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <h2>About BitAgric</h2>
-        <p>Empowering the future of farming through technology, knowledge, and insight.</p>
-        <img src="placeholder.jpg" alt="Farmers using digital tools in field" width="1200" height="400">
-    </section>
-
-    <!-- Our Mission Section -->
-    <section id="mission">
-        <h3>Our Mission</h3>
-        <p>BitAgric exists to democratize agricultural knowledge and tools for farmers of all scales. We combine cutting-edge technology with practical farming wisdom to create accessible solutions that enhance productivity, sustainability, and profitability in agriculture.</p>
-        <p>Our platform bridges the gap between traditional farming knowledge and modern digital solutions, helping farmers make data-driven decisions while respecting time-tested agricultural practices.</p>
-    </section>
-
-    <!-- Our Vision Section -->
-    <section id="vision">
-        <h3>Our Vision</h3>
-        <p>We envision a world where every farmer, regardless of location or scale, has access to the tools and knowledge needed to optimize their operations sustainably. By 2030, we aim to be the leading digital companion for 1 million farmers worldwide, helping increase yields while reducing environmental impact through smart farming practices.</p>
-    </section>
-
-    <!-- Core Values Section -->
-    <section id="values">
-        <h3>Our Core Values</h3>
-        <div class="values-grid">
-            <article class="value-card">
-                <h4>Innovation</h4>
-                <p>We continuously develop practical solutions that address real farming challenges through technology.</p>
-            </article>
-            <article class="value-card">
-                <h4>Sustainability</h4>
-                <p>We promote farming methods that protect the environment while ensuring economic viability.</p>
-            </article>
-            <article class="value-card">
-                <h4>Knowledge Sharing</h4>
-                <p>We believe agricultural wisdom should be freely accessible to all who need it.</p>
-            </article>
-            <article class="value-card">
-                <h4>Inclusivity</h4>
-                <p>Our solutions are designed for farmers of all scales, from smallholders to commercial operations.</p>
-            </article>
-            <article class="value-card">
-                <h4>Empowerment</h4>
-                <p>We equip farmers with tools and insights to take control of their agricultural outcomes.</p>
-            </article>
-            <article class="value-card">
-                <h4>Transparency</h4>
-                <p>We maintain open communication about our methods, data sources, and business practices.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Our Story Section -->
-    <section id="journey">
-        <h3>Our Journey</h3>
-        <div class="timeline">
-            <article class="milestone">
-                <h4>2018 - Foundation</h4>
-                <p>BitAgric was founded by agricultural engineers and data scientists who saw the potential for technology to transform small-scale farming in East Africa.</p>
-            </article>
-            <article class="milestone">
-                <h4>2019 - First Prototype</h4>
-                <p>Launched our initial budgeting tool after field testing with 50 smallholder farmers in Kenya.</p>
-            </article>
-            <article class="milestone">
-                <h4>2020 - Platform Expansion</h4>
-                <p>Added crop encyclopedia and marketing features based on user feedback, reaching 5,000 active users.</p>
-            </article>
-            <article class="milestone">
-                <h4>2022 - Regional Growth</h4>
-                <p>Expanded services to Tanzania and Uganda, forming partnerships with agricultural cooperatives.</p>
-            </article>
-            <article class="milestone">
-                <h4>2023 - Mobile Integration</h4>
-                <p>Launched SMS-based tools to serve farmers without smartphones, doubling our user base.</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Meet the Team Section -->
-    <section id="team">
-        <h3>Our Team</h3>
-        <div class="team-grid">
-            <article class="team-member">
-                <figure>
-                    <img src="placeholder.jpg" alt="Portrait of Jamal Mwangi" width="200" height="200">
-                    <figcaption>
-                        <h4>Jamal Mwangi</h4>
-                        <p>Founder & CEO</p>
-                        <p>Agricultural engineer with 15 years experience in smallholder farm optimization across East Africa.</p>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="team-member">
-                <figure>
-                    <img src="placeholder.jpg" alt="Portrait of Aisha Okoth" width="200" height="200">
-                    <figcaption>
-                        <h4>Aisha Okoth</h4>
-                        <p>Lead Agronomist</p>
-                        <p>Specializes in tropical crop systems and sustainable soil management practices.</p>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="team-member">
-                <figure>
-                    <img src="placeholder.jpg" alt="Portrait of David Kimani" width="200" height="200">
-                    <figcaption>
-                        <h4>David Kimani</h4>
-                        <p>Product Manager</p>
-                        <p>Oversees tool development with focus on usability for farmers with limited digital literacy.</p>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="team-member">
-                <figure>
-                    <img src="placeholder.jpg" alt="Portrait of Grace Njoroge" width="200" height="200">
-                    <figcaption>
-                        <h4>Grace Njoroge</h4>
-                        <p>Data Scientist</p>
-                        <p>Develops predictive models for crop yields and market trends using machine learning.</p>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="team-member">
-                <figure>
-                    <img src="placeholder.jpg" alt="Portrait of Paul Omondi" width="200" height="200">
-                    <figcaption>
-                        <h4>Paul Omondi</h4>
-                        <p>Field Operations</p>
-                        <p>Leads our rural outreach programs and farmer training initiatives.</p>
-                    </figcaption>
-                </figure>
-            </article>
-            <article class="team-member">
-                <figure>
-                    <img src="placeholder.jpg" alt="Portrait of Wanjiru Mbeki" width="200" height="200">
-                    <figcaption>
-                        <h4>Wanjiru Mbeki</h4>
-                        <p>UX Designer</p>
-                        <p>Ensures our tools are intuitive and accessible for diverse farming communities.</p>
-                    </figcaption>
-                </figure>
-            </article>
-        </div>
-    </section>
-
-    <!-- Impact & Achievements Section -->
-    <section id="impact">
-        <h3>Our Impact</h3>
-        <div class="impact-stats">
-            <article class="stat">
-                <h4>10,000+</h4>
-                <p>Farms actively using BitAgric tools</p>
-            </article>
-            <article class="stat">
-                <h4>15+</h4>
-                <p>Countries with active BitAgric users</p>
-            </article>
-            <article class="stat">
-                <h4>100+</h4>
-                <p>Resources published in our knowledge base</p>
-            </article>
-            <article class="stat">
-                <h4>50%</h4>
-                <p>Average yield increase reported by long-term users</p>
-            </article>
-        </div>
-    </section>
-
-    <!-- Collaborators Section -->
-    <section id="collaborators">
-        <h3>Our Collaborators</h3>
-        <div class="partner-logos">
-            <img src="placeholder.jpg" alt="Ministry of Agriculture Logo" width="150" height="100">
-            <img src="placeholder.jpg" alt="East African Farmers Federation Logo" width="150" height="100">
-            <img src="placeholder.jpg" alt="Nairobi University Ag Department Logo" width="150" height="100">
-            <img src="placeholder.jpg" alt="AgriTech Startup Hub Logo" width="150" height="100">
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section id="cta">
-        <h3>Ready to boost your farm's potential?</h3>
-        <div class="cta-actions">
-            <a href="resources.html" class="cta-button">Explore Tools</a>
-            <a href="encyclopedia.html" class="cta-button">Visit Encyclopedia</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="contact-info">
-                <h4>Contact Us</h4>
-                <p>Email: info@bitagric.com</p>
-                <p>Phone: +254 700 123456</p>
-                <p>Address: 123 AgriTech Plaza, Nairobi, Kenya</p>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section about-hero">
+            <div class="hero-content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a> / <span>About Us</span>
+                </div>
+                <h1 class="hero-headline">About BitAgric</h1>
+                <p class="hero-subhead">Empowering the future of farming through technology, knowledge, and insight.</p>
             </div>
-            <div class="newsletter">
-                <h4>Stay Updated</h4>
-                <form>
-                    <input type="email" placeholder="Your email address">
-                    <button type="submit">Subscribe</button>
-                </form>
+            <div class="hero-image">
+                <img src="assets/farmers-digital.jpg" alt="Farmers using digital tools in field" class="hero-img" loading="lazy">
             </div>
-            <div class="social-links">
-                <h4>Connect With Us</h4>
-                <ul>
-                    <li><a href="#facebook">Facebook</a></li>
-                    <li><a href="#twitter">Twitter</a></li>
-                    <li><a href="#instagram">Instagram</a></li>
-                    <li><a href="#linkedin">LinkedIn</a></li>
+        </section>
+
+        <!-- Mission & Vision Sections -->
+        <section class="about-section mission-section">
+            <div class="about-container">
+                <article class="mission-card">
+                    <div class="mission-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.87 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/>
+                        </svg>
+                    </div>
+                    <h2 class="section-title">Our Mission</h2>
+                    <div class="mission-content">
+                        <p>BitAgric exists to democratize agricultural knowledge and tools for farmers of all scales. We combine cutting-edge technology with practical farming wisdom to create accessible solutions that enhance productivity, sustainability, and profitability in agriculture.</p>
+                        <p>Our platform bridges the gap between traditional farming knowledge and modern digital solutions, helping farmers make data-driven decisions while respecting time-tested agricultural practices.</p>
+                    </div>
+                </article>
+
+                <article class="vision-card">
+                    <div class="vision-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                        </svg>
+                    </div>
+                    <h2 class="section-title">Our Vision</h2>
+                    <div class="vision-content">
+                        <p>We envision a world where every farmer, regardless of location or scale, has access to the tools and knowledge needed to optimize their operations sustainably. By 2030, we aim to be the leading digital companion for 1 million farmers worldwide, helping increase yields while reducing environmental impact through smart farming practices.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Core Values Section -->
+        <section class="values-section">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <article class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3V8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-desc">We continuously develop practical solutions that address real farming challenges through technology.</p>
+                </article>
+                
+                <article class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm6 9.09c0 4-2.55 7.7-6 8.83-3.45-1.13-6-4.82-6-8.83v-4.7l6-2.25 6 2.25v4.7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Sustainability</h3>
+                    <p class="value-desc">We promote farming methods that protect the environment while ensuring economic viability.</p>
+                </article>
+                
+                <article class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Knowledge Sharing</h3>
+                    <p class="value-desc">We believe agricultural wisdom should be freely accessible to all who need it.</p>
+                </article>
+                
+                <article class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Inclusivity</h3>
+                    <p class="value-desc">Our solutions are designed for farmers of all scales, from smallholders to commercial operations.</p>
+                </article>
+                
+                <article class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Empowerment</h3>
+                    <p class="value-desc">We equip farmers with tools and insights to take control of their agricultural outcomes.</p>
+                </article>
+                
+                <article class="value-card">
+                    <div class="value-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M3 5H1v16c0 1.1.9 2 2 2h16v-2H3V5zm18-4H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 16H7V3h14v14zm-8-2h2c1.1 0 2-.89 2-2v-2c0-1.11-.9-2-2-2h-2V7h4V5h-4c-1.1 0-2 .89-2 2v6c0 1.11.9 2 2 2zm0-4h2v2h-2v-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Transparency</h3>
+                    <p class="value-desc">We maintain open communication about our methods, data sources, and business practices.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Our Story Section -->
+        <section class="timeline-section">
+            <div class="section-header">
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-subtitle">Milestones in our growth and development</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                
+                <article class="milestone">
+                    <div class="milestone-date">2018</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">Foundation</h3>
+                        <p class="milestone-desc">BitAgric was founded by agricultural engineers and data scientists who saw the potential for technology to transform small-scale farming in East Africa.</p>
+                    </div>
+                </article>
+                
+                <article class="mileline">
+                    <div class="milestone-date">2019</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">First Prototype</h3>
+                        <p class="milestone-desc">Launched our initial budgeting tool after field testing with 50 smallholder farmers in Kenya.</p>
+                    </div>
+                </article>
+                
+                <article class="milestone">
+                    <div class="milestone-date">2020</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">Platform Expansion</h3>
+                        <p class="milestone-desc">Added crop encyclopedia and marketing features based on user feedback, reaching 5,000 active users.</p>
+                    </div>
+                </article>
+                
+                <article class="milestone">
+                    <div class="milestone-date">2022</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">Regional Growth</h3>
+                        <p class="milestone-desc">Expanded services to Tanzania and Uganda, forming partnerships with agricultural cooperatives.</p>
+                    </div>
+                </article>
+                
+                <article class="milestone">
+                    <div class="milestone-date">2023</div>
+                    <div class="milestone-content">
+                        <h3 class="milestone-title">Mobile Integration</h3>
+                        <p class="milestone-desc">Launched SMS-based tools to serve farmers without smartphones, doubling our user base.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Meet the Team Section -->
+        <section class="team-section">
+            <div class="section-header">
+                <h2 class="section-title">Our Team</h2>
+                <p class="section-subtitle">The passionate people behind BitAgric</p>
+            </div>
+            
+            <div class="team-grid">
+                <article class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-jamal.jpg" alt="Portrait of Jamal Mwangi" class="member-img" loading="lazy">
+                        <div class="member-overlay">
+                            <button class="member-btn" data-modal="jamal-modal">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Jamal Mwangi</h3>
+                        <p class="member-title">Founder & CEO</p>
+                    </div>
+                </article>
+                
+                <article class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-aisha.jpg" alt="Portrait of Aisha Okoth" class="member-img" loading="lazy">
+                        <div class="member-overlay">
+                            <button class="member-btn" data-modal="aisha-modal">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Aisha Okoth</h3>
+                        <p class="member-title">Lead Agronomist</p>
+                    </div>
+                </article>
+                
+                <article class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-david.jpg" alt="Portrait of David Kimani" class="member-img" loading="lazy">
+                        <div class="member-overlay">
+                            <button class="member-btn" data-modal="david-modal">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">David Kimani</h3>
+                        <p class="member-title">Product Manager</p>
+                    </div>
+                </article>
+                
+                <article class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-grace.jpg" alt="Portrait of Grace Njoroge" class="member-img" loading="lazy">
+                        <div class="member-overlay">
+                            <button class="member-btn" data-modal="grace-modal">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Grace Njoroge</h3>
+                        <p class="member-title">Data Scientist</p>
+                    </div>
+                </article>
+                
+                <article class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-paul.jpg" alt="Portrait of Paul Omondi" class="member-img" loading="lazy">
+                        <div class="member-overlay">
+                            <button class="member-btn" data-modal="paul-modal">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Paul Omondi</h3>
+                        <p class="member-title">Field Operations</p>
+                    </div>
+                </article>
+                
+                <article class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-wanjiru.jpg" alt="Portrait of Wanjiru Mbeki" class="member-img" loading="lazy">
+                        <div class="member-overlay">
+                            <button class="member-btn" data-modal="wanjiru-modal">View Profile</button>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3 class="member-name">Wanjiru Mbeki</h3>
+                        <p class="member-title">UX Designer</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Impact & Achievements Section -->
+        <section class="impact-section">
+            <div class="section-header">
+                <h2 class="section-title">Our Impact</h2>
+                <p class="section-subtitle">Making a difference in agriculture worldwide</p>
+            </div>
+            
+            <div class="impact-stats">
+                <article class="stat-card">
+                    <div class="stat-number" data-count="10000">0</div>
+                    <p class="stat-label">Farms actively using BitAgric tools</p>
+                </article>
+                
+                <article class="stat-card">
+                    <div class="stat-number" data-count="15">0</div>
+                    <p class="stat-label">Countries with active BitAgric users</p>
+                </article>
+                
+                <article class="stat-card">
+                    <div class="stat-number" data-count="100">0</div>
+                    <p class="stat-label">Resources published in our knowledge base</p>
+                </article>
+                
+                <article class="stat-card">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-symbol">%</div>
+                    <p class="stat-label">Average yield increase reported by long-term users</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Collaborators Section -->
+        <section class="partners-section">
+            <div class="section-header">
+                <h2 class="section-title">Our Collaborators</h2>
+                <p class="section-subtitle">Working with leading organizations in agriculture</p>
+            </div>
+            
+            <div class="partner-logos">
+                <div class="partner-logo">
+                    <img src="assets/logo-agriculture-ministry.png" alt="Ministry of Agriculture Logo" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logo-farmers-federation.png" alt="East African Farmers Federation Logo" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logo-nairobi-university.png" alt="Nairobi University Ag Department Logo" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="assets/logo-agritech-hub.png" alt="AgriTech Startup Hub Logo" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to boost your farm's potential?</h2>
+                <p class="cta-text">Join thousands of farmers using BitAgric to work smarter, not harder.</p>
+                <div class="cta-buttons">
+                    <a href="resources.html" class="btn btn-primary">Explore Tools</a>
+                    <a href="agricultural-encyclopedia.html" class="btn btn-secondary">Visit Encyclopedia</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <!-- Footer About -->
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    <svg class="logo-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2L4 7v10l8 5 8-5V7L12 2zm0 2.5L18 9v6l-6 3.5-6-3.5V9l6-4.5z"/>
+                    </svg>
+                    <span>BitAgric</span>
+                </a>
+                <p class="footer-about-text">Empowering farmers with technology to grow more with less since 2015.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Footer Navigation -->
+            <div class="footer-nav">
+                <h3 class="footer-title">Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="agricultural-encyclopedia.html">Encyclopedia</a></li>
+                    <li><a href="farm-knowledge.html">Knowledge Center</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="webinars.html">Webinars</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
                 </ul>
             </div>
+            
+            <div class="footer-nav">
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="press.html">Press</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-nav">
+                <h3 class="footer-title">Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="cookies.html">Cookie Policy</a></li>
+                    <li><a href="gdpr.html">GDPR</a></li>
+                </ul>
+            </div>
+            
+            <!-- Footer Contact -->
+            <div class="footer-contact">
+                <h3 class="footer-title">Get in Touch</h3>
+                <address>
+                    <p>123 AgriTech Plaza, Nairobi, Kenya</p>
+                    <p><a href="mailto:info@bitagric.com">info@bitagric.com</a></p>
+                    <p><a href="tel:+254700123456">+254 700 123456</a></p>
+                </address>
+            </div>
         </div>
-        <div class="legal-info">
-            <ul>
-                <li><a href="#terms">Terms of Service</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
-                <li><a href="#cookies">Cookie Policy</a></li>
-                <li>&copy; 2023 BitAgric</li>
-            </ul>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; <span class="year">2023</span> BitAgric. All rights reserved.</p>
+            <div class="footer-lang">
+                <label for="language-select" class="sr-only">Language</label>
+                <select id="language-select" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="sw">Swahili</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
         </div>
     </footer>
-    <script src="about-us.js"></script>
+
+    <!-- Team Member Modals -->
+    <div class="modal" id="jamal-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <img src="assets/team-jamal.jpg" alt="Portrait of Jamal Mwangi" class="modal-img">
+                <div class="modal-title">
+                    <h3>Jamal Mwangi</h3>
+                    <p>Founder & CEO</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p>Agricultural engineer with 15 years experience in smallholder farm optimization across East Africa. Jamal founded BitAgric after seeing firsthand how technology could transform yields for small-scale farmers.</p>
+                <p>Prior to BitAgric, Jamal worked with the Kenyan Ministry of Agriculture developing irrigation solutions for arid regions. He holds a PhD in Agricultural Engineering from the University of Nairobi.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="aisha-modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <img src="assets/team-aisha.jpg" alt="Portrait of Aisha Okoth" class="modal-img">
+                <div class="modal-title">
+                    <h3>Aisha Okoth</h3>
+                    <p>Lead Agronomist</p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p>Specializes in tropical crop systems and sustainable soil management practices. Aisha brings 12 years of field experience working with smallholder farmers across East Africa.</p>
+                <p>She leads our agronomy research team and ensures all crop recommendations are scientifically validated and locally appropriate. Aisha holds a Masters in Tropical Agriculture from Makerere University.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional modals for other team members would go here -->
+
+    <script src="script.js"></script>
 </body>
 </html>
