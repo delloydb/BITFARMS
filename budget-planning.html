@@ -5,14 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farm Budgeting & Finance | BitAgric</title>
     <meta name="description" content="Track your agricultural investments, costs, profits, and capital flows with BitAgric's budgeting tools">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="budget-planning.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Skip to Content Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Main Header / Navigation -->
     <header class="main-header">
         <div class="header-container">
-            <a href="index.html" class="logo">BitAgric</a>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>BitAgric</span>
+            </a>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
             
             <nav class="main-nav">
                 <ul class="nav-list">
@@ -22,216 +35,358 @@
                     <li class="nav-item"><a href="marketing-sales.html" class="nav-link">Marketing</a></li>
                     <li class="nav-item"><a href="farm-analytics.html" class="nav-link">Analytics</a></li>
                     <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-                    <li class="nav-item"><a href="about-us.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="contact-us.html" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon light-icon">☀️</span>
+                    <span class="theme-icon dark-icon">🌙</span>
+                </button>
+            </div>
         </div>
     </header>
 
-    <main class="budgeting-page">
-        <!-- Page Intro Section -->
-        <section class="page-intro">
-            <h1 class="page-title">Farm Budgeting & Finance</h1>
-            <p class="page-subtitle">Track your agricultural investments, costs, profits, and capital flows in one place.</p>
+    <main id="main-content" class="budgeting-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="page-title">Farm Budgeting & Finance</h1>
+                <p class="page-subtitle">Track your agricultural investments, costs, profits, and capital flows in one place.</p>
+                <div class="hero-cta">
+                    <a href="#budget-form" class="cta-button">Start Tracking</a>
+                    <a href="#stats" class="secondary-button">View Insights</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNjAwIDQwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzRjYWY1MCIgb3BhY2l0eT0iMC4xIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzRjYWY1MCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RnJlc2ggRmFybSBCdWRnZXQgSWxsdXN0cmF0aW9uPC90ZXh0Pjwvc3ZnPg==" alt="Farm budgeting illustration" loading="lazy">
+            </div>
         </section>
 
         <!-- Budget Entry Form -->
-        <section class="budget-form-section">
-            <h2 class="section-title">Add Budget Entry</h2>
-            <form class="budget-form" id="budgetEntryForm">
-                <div class="form-group">
-                    <label for="budget-category" class="form-label">Budget Category</label>
-                    <select id="budget-category" name="category" class="form-select" required>
-                        <option value="">Select category</option>
-                        <option value="seeds">Seeds</option>
-                        <option value="labor">Labor</option>
-                        <option value="transport">Transport</option>
-                        <option value="irrigation">Irrigation</option>
-                        <option value="fertilizer">Fertilizer</option>
-                        <option value="equipment">Equipment</option>
-                        <option value="land">Land</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="amount" class="form-label">Amount</label>
-                    <input type="number" id="amount" name="amount" step="0.01" min="0" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="currency" class="form-label">Currency</label>
-                    <select id="currency" name="currency" class="form-select" required>
-                        <option value="USD">USD ($)</option>
-                        <option value="EUR">EUR (€)</option>
-                        <option value="GBP">GBP (£)</option>
-                        <option value="KES">KES (KSh)</option>
-                        <option value="NGN">NGN (₦)</option>
-                        <option value="ZAR">ZAR (R)</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="date" class="form-label">Date</label>
-                    <input type="date" id="date" name="date" class="form-input" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="description" class="form-label">Description/Notes</label>
-                    <textarea id="description" name="description" rows="3" class="form-textarea"></textarea>
-                </div>
-                
-                <button type="submit" class="form-submit-btn">Add Entry</button>
-            </form>
+        <section id="budget-form" class="budget-form-section card">
+            <div class="section-header">
+                <h2 class="section-title">Add Budget Entry</h2>
+                <button class="section-toggle" aria-expanded="true" aria-controls="form-content">Collapse</button>
+            </div>
+            
+            <div id="form-content" class="section-content">
+                <form class="budget-form" id="budgetEntryForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="budget-category" class="form-label">Budget Category</label>
+                            <select id="budget-category" name="category" class="form-select" required>
+                                <option value="">Select category</option>
+                                <option value="seeds">Seeds</option>
+                                <option value="labor">Labor</option>
+                                <option value="transport">Transport</option>
+                                <option value="irrigation">Irrigation</option>
+                                <option value="fertilizer">Fertilizer</option>
+                                <option value="equipment">Equipment</option>
+                                <option value="land">Land</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="amount" class="form-label">Amount</label>
+                            <div class="input-with-icon">
+                                <input type="number" id="amount" name="amount" step="0.01" min="0" class="form-input" required>
+                                <span class="currency-symbol">$</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="currency" class="form-label">Currency</label>
+                            <select id="currency" name="currency" class="form-select" required>
+                                <option value="USD">USD ($)</option>
+                                <option value="EUR">EUR (€)</option>
+                                <option value="GBP">GBP (£)</option>
+                                <option value="KES">KES (KSh)</option>
+                                <option value="NGN">NGN (₦)</option>
+                                <option value="ZAR">ZAR (R)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date" class="form-label">Date</label>
+                            <input type="date" id="date" name="date" class="form-input" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="description" class="form-label">Description/Notes</label>
+                        <textarea id="description" name="description" rows="3" class="form-textarea" placeholder="Add any additional details about this entry..."></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="form-submit-btn">Add Entry</button>
+                        <button type="reset" class="form-reset-btn">Clear Form</button>
+                    </div>
+                </form>
+            </div>
         </section>
 
         <!-- Key Stats Section -->
-        <section class="key-stats-section">
+        <section id="stats" class="key-stats-section">
             <h2 class="section-title">Financial Overview</h2>
             <div class="stats-grid">
                 <div class="stat-card">
+                    <div class="stat-icon">💰</div>
                     <h3 class="stat-title">Total Budget Allocated</h3>
                     <p class="stat-value">$25,000.00</p>
+                    <p class="stat-change positive">+5% from last month</p>
                 </div>
                 
                 <div class="stat-card">
+                    <div class="stat-icon">📉</div>
                     <h3 class="stat-title">Total Expenses</h3>
                     <p class="stat-value">$18,750.00</p>
+                    <p class="stat-change negative">+12% from last month</p>
                 </div>
                 
                 <div class="stat-card">
+                    <div class="stat-icon">📊</div>
                     <h3 class="stat-title">Remaining Funds</h3>
                     <p class="stat-value">$6,250.00</p>
+                    <p class="stat-change negative">-15% from last month</p>
                 </div>
                 
                 <div class="stat-card">
+                    <div class="stat-icon">📈</div>
                     <h3 class="stat-title">ROI (Return on Investment)</h3>
                     <p class="stat-value">22%</p>
+                    <p class="stat-change positive">+3% from last quarter</p>
                 </div>
             </div>
         </section>
 
         <!-- Budget Summary Tables -->
         <section class="budget-tables-section">
-            <h2 class="section-title">Budget Analysis</h2>
-            
-            <div class="table-container">
-                <h3 class="table-title">Budgeted vs Actual Expenditures</h3>
-                <table class="budget-table">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Budgeted</th>
-                            <th>Actual</th>
-                            <th>Variance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Seeds</td>
-                            <td>$5,000.00</td>
-                            <td>$4,800.00</td>
-                            <td class="positive">-$200.00</td>
-                        </tr>
-                        <tr>
-                            <td>Labor</td>
-                            <td>$8,000.00</td>
-                            <td>$9,200.00</td>
-                            <td class="negative">+$1,200.00</td>
-                        </tr>
-                        <tr>
-                            <td>Equipment</td>
-                            <td>$6,000.00</td>
-                            <td>$5,500.00</td>
-                            <td class="positive">-$500.00</td>
-                        </tr>
-                        <tr>
-                            <td>Transport</td>
-                            <td>$3,000.00</td>
-                            <td>$3,250.00</td>
-                            <td class="negative">+$250.00</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="section-header">
+                <h2 class="section-title">Budget Analysis</h2>
+                <div class="table-controls">
+                    <button class="table-tab active" data-tab="expenditures">Expenditures</button>
+                    <button class="table-tab" data-tab="investments">Investments</button>
+                    <button class="table-tab" data-tab="profits">Profits</button>
+                </div>
             </div>
             
-            <div class="table-container">
-                <h3 class="table-title">Capital Invested</h3>
-                <table class="budget-table">
-                    <thead>
-                        <tr>
-                            <th>Investment Type</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                            <th>ROI Period</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Land Acquisition</td>
-                            <td>$15,000.00</td>
-                            <td>2023-01-15</td>
-                            <td>5 years</td>
-                        </tr>
-                        <tr>
-                            <td>Irrigation System</td>
-                            <td>$7,500.00</td>
-                            <td>2023-03-22</td>
-                            <td>3 years</td>
-                        </tr>
-                        <tr>
-                            <td>Storage Facility</td>
-                            <td>$4,200.00</td>
-                            <td>2023-05-10</td>
-                            <td>4 years</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="table-container active" id="expenditures-table">
+                <div class="table-header">
+                    <h3 class="table-title">Budgeted vs Actual Expenditures</h3>
+                    <button class="table-help" aria-label="Help" data-tooltip="Compare your planned budget with actual spending">?</button>
+                </div>
+                <div class="table-scroll">
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Budgeted</th>
+                                <th>Actual</th>
+                                <th>Variance</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Seeds</td>
+                                <td>$5,000.00</td>
+                                <td>$4,800.00</td>
+                                <td class="positive">-$200.00</td>
+                                <td><span class="status-badge success">On Track</span></td>
+                            </tr>
+                            <tr>
+                                <td>Labor</td>
+                                <td>$8,000.00</td>
+                                <td>$9,200.00</td>
+                                <td class="negative">+$1,200.00</td>
+                                <td><span class="status-badge warning">Over Budget</span></td>
+                            </tr>
+                            <tr>
+                                <td>Equipment</td>
+                                <td>$6,000.00</td>
+                                <td>$5,500.00</td>
+                                <td class="positive">-$500.00</td>
+                                <td><span class="status-badge success">On Track</span></td>
+                            </tr>
+                            <tr>
+                                <td>Transport</td>
+                                <td>$3,000.00</td>
+                                <td>$3,250.00</td>
+                                <td class="negative">+$250.00</td>
+                                <td><span class="status-badge warning">Over Budget</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             
-            <div class="table-container">
-                <h3 class="table-title">Expected vs Realized Profits</h3>
-                <table class="budget-table">
-                    <thead>
-                        <tr>
-                            <th>Crop/Product</th>
-                            <th>Expected</th>
-                            <th>Actual</th>
-                            <th>Difference</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Maize</td>
-                            <td>$3,200.00</td>
-                            <td>$3,450.00</td>
-                            <td class="positive">+$250.00</td>
-                        </tr>
-                        <tr>
-                            <td>Tomatoes</td>
-                            <td>$4,800.00</td>
-                            <td>$4,200.00</td>
-                            <td class="negative">-$600.00</td>
-                        </tr>
-                        <tr>
-                            <td>Beans</td>
-                            <td>$2,500.00</td>
-                            <td>$2,750.00</td>
-                            <td class="positive">+$250.00</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="table-container" id="investments-table">
+                <div class="table-header">
+                    <h3 class="table-title">Capital Invested</h3>
+                    <button class="table-help" aria-label="Help" data-tooltip="View your long-term investments and their return periods">?</button>
+                </div>
+                <div class="table-scroll">
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>Investment Type</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>ROI Period</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Land Acquisition</td>
+                                <td>$15,000.00</td>
+                                <td>2023-01-15</td>
+                                <td>5 years</td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 20%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Irrigation System</td>
+                                <td>$7,500.00</td>
+                                <td>2023-03-22</td>
+                                <td>3 years</td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Storage Facility</td>
+                                <td>$4,200.00</td>
+                                <td>2023-05-10</td>
+                                <td>4 years</td>
+                                <td>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 15%"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="table-container" id="profits-table">
+                <div class="table-header">
+                    <h3 class="table-title">Expected vs Realized Profits</h3>
+                    <button class="table-help" aria-label="Help" data-tooltip="Compare your profit expectations with actual results">?</button>
+                </div>
+                <div class="table-scroll">
+                    <table class="budget-table">
+                        <thead>
+                            <tr>
+                                <th>Crop/Product</th>
+                                <th>Expected</th>
+                                <th>Actual</th>
+                                <th>Difference</th>
+                                <th>Performance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maize</td>
+                                <td>$3,200.00</td>
+                                <td>$3,450.00</td>
+                                <td class="positive">+$250.00</td>
+                                <td><span class="status-badge success">Exceeded</span></td>
+                            </tr>
+                            <tr>
+                                <td>Tomatoes</td>
+                                <td>$4,800.00</td>
+                                <td>$4,200.00</td>
+                                <td class="negative">-$600.00</td>
+                                <td><span class="status-badge warning">Below Target</span></td>
+                            </tr>
+                            <tr>
+                                <td>Beans</td>
+                                <td>$2,500.00</td>
+                                <td>$2,750.00</td>
+                                <td class="positive">+$250.00</td>
+                                <td><span class="status-badge success">Exceeded</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <h2 class="section-title">What Farmers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"BitAgric's budgeting tools helped me reduce unnecessary expenses by 15% in the first season. The clear visualizations make it easy to spot areas for improvement."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🌾</div>
+                        <div class="author-info">
+                            <h4>Sarah K.</h4>
+                            <p class="author-title">Small-scale Farmer, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a farm manager, tracking multiple budgets was challenging. Now I can see all operations in one dashboard and make data-driven decisions."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🧑‍💼</div>
+                        <div class="author-info">
+                            <h4>James M.</h4>
+                            <p class="author-title">Farm Manager, Nigeria</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Export Section -->
-        <section class="export-section">
-            <h2 class="section-title">Export Data</h2>
-            <div class="export-options">
-                <button type="button" class="export-btn">Export to PDF</button>
-                <button type="button" class="export-btn">Export to Excel</button>
-                <button type="button" class="export-btn">Export to CSV</button>
+        <section class="export-section card">
+            <div class="export-content">
+                <h2 class="section-title">Export Your Data</h2>
+                <p class="export-description">Download your budget reports for offline analysis or to share with financial advisors.</p>
+                <div class="export-options">
+                    <button type="button" class="export-btn">
+                        <span class="export-icon">📄</span>
+                        Export to PDF
+                    </button>
+                    <button type="button" class="export-btn">
+                        <span class="export-icon">📊</span>
+                        Export to Excel
+                    </button>
+                    <button type="button" class="export-btn">
+                        <span class="export-icon">📝</span>
+                        Export to CSV
+                    </button>
+                </div>
+            </div>
+            <div class="export-image">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgMzAwIDIwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzRjYWY1MCIgb3BhY2l0eT0iMC4xIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZmlsbD0iIzRjYWY1MCIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+RXhwb3J0IFJlcG9ydHMgSWxsdXN0cmF0aW9uPC90ZXh0Pjwvc3ZnPg==" alt="Export reports illustration" loading="lazy">
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Optimize Your Farm Budget?</h2>
+                <p class="cta-text">Join thousands of farmers who are making smarter financial decisions with BitAgric.</p>
+                <div class="cta-buttons">
+                    <a href="signup.html" class="cta-button">Sign Up Free</a>
+                    <a href="demo.html" class="secondary-button">Request Demo</a>
+                </div>
             </div>
         </section>
     </main>
@@ -239,31 +394,76 @@
     <!-- Main Footer -->
     <footer class="main-footer">
         <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <span class="logo-icon">🌱</span>
+                    <span>BitAgric</span>
+                </a>
+                <p class="footer-mission">Empowering farmers with data-driven agricultural tools.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><span>📘</span></a>
+                    <a href="#" aria-label="Twitter"><span>🐦</span></a>
+                    <a href="#" aria-label="Instagram"><span>📷</span></a>
+                </div>
+            </div>
+            
             <div class="footer-nav">
-                <h3 class="footer-title">Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="agricultural-encyclopedia.html">Encyclopedia</a></li>
-                    <li><a href="budgeting-finance.html">Budgeting</a></li>
-                    <li><a href="contact-us.html">Contact</a></li>
-                    <li><a href="legal.html">Privacy Policy</a></li>
-                </ul>
+                <div class="footer-nav-column">
+                    <h3 class="footer-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="agricultural-encyclopedia.html">Encyclopedia</a></li>
+                        <li><a href="resources.html">Guides</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="webinars.html">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-nav-column">
+                    <h3 class="footer-title">Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="budgeting-finance.html">Budgeting</a></li>
+                        <li><a href="farm-analytics.html">Analytics</a></li>
+                        <li><a href="crop-planner.html">Crop Planner</a></li>
+                        <li><a href="weather-tools.html">Weather Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-nav-column">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact-us.html">Contact</a></li>
+                    </ul>
+                </div>
             </div>
             
             <div class="footer-newsletter">
                 <h3 class="footer-title">Stay Updated</h3>
                 <form class="newsletter-form">
                     <label for="newsletter-email" class="sr-only">Email Address</label>
-                    <input type="email" id="newsletter-email" name="email" placeholder="Your email address" class="newsletter-input">
-                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                    <div class="input-group">
+                        <input type="email" id="newsletter-email" name="email" placeholder="Your email address" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </div>
+                    <p class="newsletter-note">Get the latest farming tips and feature updates.</p>
                 </form>
             </div>
-            
-            <div class="footer-copyright">
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-legal">
                 <p>&copy; <span class="year">2023</span> BitAgric. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="cookies.html">Cookie Settings</a>
+                </div>
             </div>
         </div>
     </footer>
+
     <script src="budget-planning.js"></script>
 </body>
 </html>
