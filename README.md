@@ -4,11 +4,9 @@ BitFarms is a modern, farmer-centric digital platform designed to simplify and e
 ### 🔍 Project Overview
 BitFarms bridges the gap between traditional farming and digital innovation. The platform provides farmers with everything they need to manage their farms efficiently while promoting sustainability and profitability.
 
-### 🧑‍🌾 Tailored for individual farmers, farm cooperatives, and agribusinesses.
-
-### 📊 Features real-time tracking, data analysis, and actionable insights.
-
-### 🌍 Designed for accessibility in both rural and urban setups.
+Tailored for individual farmers, farm cooperatives, and agribusinesses.
+Features real-time tracking, data analysis, and actionable insights.
+Designed for accessibility in both rural and urban setups.
 
 ### 🛠️ Tech Stack
 Component	Technology Used
